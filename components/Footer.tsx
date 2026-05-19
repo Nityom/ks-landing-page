@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/20 bg-[#16423B] relative overflow-visible mt-20">
+    <footer className="border-t border-white/20 bg-[#31473A] relative overflow-visible mt-20">
       {/* CSS @keyframes declaration for extremely robust custom slow-spin animation */}
       <style>{`
         @keyframes footer-badge-spin {
@@ -41,7 +41,7 @@ export default function Footer() {
               <defs>
                 <path id="footerCirclePath" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
               </defs>
-              <text className="text-[6.8px]" fontSize="6.8" fill="#16423B" fontFamily="sans-serif" fontWeight="700" letterSpacing="2.8">
+              <text className="text-[6.8px]" fontSize="6.8" fill="#31473A" fontFamily="sans-serif" fontWeight="700" letterSpacing="2.8">
                 <textPath href="#footerCirclePath">Eco First • Style Next • Value Always •</textPath>
               </text>
             </svg>
@@ -109,7 +109,7 @@ export default function Footer() {
               <a
                 href="/images/Worldstar Packaging Industry Broucher New.pdf"
                 download
-                className="mt-6 inline-block bg-white text-[#16423B] px-6 py-3 rounded-md text-sm font-bold hover:bg-[#E6F7F6] transition-colors shadow-md text-center"
+                className="mt-6 inline-block bg-white text-[#31473A] px-6 py-3 rounded-md text-sm font-bold hover:bg-[#E9EFE6] transition-colors shadow-md text-center"
               >
                 Download Brochure
               </a>

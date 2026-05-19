@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 
 export default function CompostablePage() {
   return (
-    <div className="min-h-screen bg-[#5FBBB5] font-sans text-[#16423B]" style={{ paddingTop: '160px', paddingBottom: '120px' }}>
+    <div className="min-h-screen bg-[#E9EFE6] font-inter text-[#31473A]" style={{ paddingTop: '160px', paddingBottom: '120px' }}>
       
       {/* Page Header (Centered) */}
       <div className="max-w-6xl mx-auto px-6 mb-16 text-center">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-wide mb-6 text-[#16423B]">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-wide mb-6 text-[#31473A]">
           COMPOSTABLE PAPER CUPS
         </h1>
-        <h2 className="text-xl md:text-2xl font-light text-[#16423B]/80">
+        <h2 className="text-xl md:text-2xl font-light text-[#31473A]/80">
           Sip Sustainably, Save the Future!
         </h2>
       </div>
@@ -26,7 +26,7 @@ export default function CompostablePage() {
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-20">
         <div className="space-y-6 text-[15px] font-medium opacity-90">
           <div>
-            <span className="inline-block bg-white text-[#16423B] font-bold px-4 py-4 rounded-full text-xs mb-4 shadow-sm">
+            <span className="inline-block bg-white text-[#31473A] font-bold px-4 py-4 rounded-full text-xs mb-4 shadow-sm">
               CPCB Certified
             </span>
           </div>
@@ -55,7 +55,7 @@ export default function CompostablePage() {
 
       {/* Key Highlights Card */}
       <div className="max-w-5xl mx-auto px-6 mb-8">
-        <div className="bg-[#E6F7F6] rounded-2xl py-12 px-10 shadow-sm border border-[#E6F7F6]/50">
+        <div className="bg-[#E9EFE6] rounded-2xl py-12 px-10 shadow-sm border border-[#E9EFE6]/50">
           <h3 className="text-2xl font-bold text-center mb-10">
             Key Highlights of Our Certified Compostable Paper Cups
           </h3>
@@ -64,10 +64,10 @@ export default function CompostablePage() {
             {/* Item 1 */}
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <Shield className="w-6 h-6 text-[#16423B] opacity-40 flex-shrink-0" strokeWidth={1.5} />
-                <h4 className="font-bold text-[#16423B] text-lg">CPCB Certified</h4>
+                <Shield className="w-6 h-6 text-[#31473A] opacity-40 flex-shrink-0" strokeWidth={1.5} />
+                <h4 className="font-bold text-[#31473A] text-lg">CPCB Certified</h4>
               </div>
-              <p className="text-[#16423B] text-sm leading-relaxed opacity-90 pl-9">
+              <p className="text-[#31473A] text-sm leading-relaxed opacity-90 pl-9">
                 Our cups are officially recognized by the Central Pollution Control Board, affirming our commitment to environmental sustainability.
               </p>
             </div>
@@ -75,10 +75,10 @@ export default function CompostablePage() {
             {/* Item 2 */}
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <Leaf className="w-6 h-6 text-[#16423B] opacity-40 flex-shrink-0" strokeWidth={1.5} />
-                <h4 className="font-bold text-[#16423B] text-lg">Eco-friendly Materials</h4>
+                <Leaf className="w-6 h-6 text-[#31473A] opacity-40 flex-shrink-0" strokeWidth={1.5} />
+                <h4 className="font-bold text-[#31473A] text-lg">Eco-friendly Materials</h4>
               </div>
-              <p className="text-[#16423B] text-sm leading-relaxed opacity-90 pl-9">
+              <p className="text-[#31473A] text-sm leading-relaxed opacity-90 pl-9">
                 Made from biodegradable and compostable materials, our cups are designed to minimize environmental impact.
               </p>
             </div>
@@ -86,10 +86,10 @@ export default function CompostablePage() {
             {/* Item 3 */}
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <Recycle className="w-6 h-6 text-[#16423B] opacity-40 flex-shrink-0" strokeWidth={1.5} />
-                <h4 className="font-bold text-[#16423B] text-lg">Sustainable Choice</h4>
+                <Recycle className="w-6 h-6 text-[#31473A] opacity-40 flex-shrink-0" strokeWidth={1.5} />
+                <h4 className="font-bold text-[#31473A] text-lg">Sustainable Choice</h4>
               </div>
-              <p className="text-[#16423B] text-sm leading-relaxed opacity-90 pl-9">
+              <p className="text-[#31473A] text-sm leading-relaxed opacity-90 pl-9">
                 Ideal for businesses aiming to reduce their carbon footprint and support a greener future.
               </p>
             </div>
@@ -99,9 +99,9 @@ export default function CompostablePage() {
 
       {/* CPCB Certification Verification Card */}
       <div className="max-w-5xl mx-auto px-6 mb-8">
-        <div className="bg-[#E6F7F6] rounded-2xl py-12 px-10 shadow-sm border border-[#E6F7F6]/50">
+        <div className="bg-[#E9EFE6] rounded-2xl py-12 px-10 shadow-sm border border-[#E9EFE6]/50">
           <div className="flex items-center justify-center gap-3 mb-10">
-            <Award className="w-7 h-7 text-[#16423B] opacity-60" strokeWidth={1.5} />
+            <Award className="w-7 h-7 text-[#31473A] opacity-60" strokeWidth={1.5} />
             <h3 className="text-2xl font-bold">CPCB Certification Verification</h3>
           </div>
           
@@ -117,24 +117,24 @@ export default function CompostablePage() {
                   className="object-contain"
                 />
               </div>
-              <p className="text-[#16423B] text-sm font-medium">Scan QR Code to View Certificate</p>
+              <p className="text-[#31473A] text-sm font-medium">Scan QR Code to View Certificate</p>
             </div>
 
             {/* Right: Details */}
             <div className="flex justify-center md:justify-start">
               <div className="space-y-6">
-                <h4 className="font-bold text-[#16423B] text-lg">Certificate Details</h4>
+                <h4 className="font-bold text-[#31473A] text-lg">Certificate Details</h4>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#5FBBB5]" strokeWidth={2} />
-                    <span className="text-[#16423B] text-sm font-medium">Certification Date: April 2025</span>
+                    <CheckCircle2 className="w-5 h-5 text-[#E9EFE6]" strokeWidth={2} />
+                    <span className="text-[#31473A] text-sm font-medium">Certification Date: April 2025</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#5FBBB5]" strokeWidth={2} />
-                    <span className="text-[#16423B] text-sm font-medium">Product Category: Compostable Food Packaging</span>
+                    <CheckCircle2 className="w-5 h-5 text-[#E9EFE6]" strokeWidth={2} />
+                    <span className="text-[#31473A] text-sm font-medium">Product Category: Compostable Food Packaging</span>
                   </div>
                 </div>
-                <p className="text-xs text-[#16423B] opacity-70 pt-2">
+                <p className="text-xs text-[#31473A] opacity-70 pt-2">
                   Verified by Central Pollution Control Board
                 </p>
               </div>
@@ -145,8 +145,8 @@ export default function CompostablePage() {
 
       {/* Footer Disclaimer Card */}
       <div className="max-w-5xl mx-auto px-6">
-        <div className="bg-[#E6F7F6] rounded-2xl py-8 px-10 shadow-sm border border-[#E6F7F6]/50 text-center">
-          <p className="italic font-medium text-[#16423B] text-[15px]">
+        <div className="bg-[#E9EFE6] rounded-2xl py-8 px-10 shadow-sm border border-[#E9EFE6]/50 text-center">
+          <p className="italic font-medium text-[#31473A] text-[15px]">
             All products are tested as per global food safety and packaging standards at an internationally accredited laboratory (SGS) annually. The test reports are shared on demand.
           </p>
         </div>

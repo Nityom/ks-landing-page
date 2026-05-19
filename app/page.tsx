@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -14,6 +14,21 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const cupRef = useRef<HTMLImageElement>(null);
   const targetSpotRef = useRef<HTMLDivElement>(null);
+
+  const heroCups = [
+    { img: "/images/c1.png", name: "GOURMET FRESH COFFEE", desc: "Great coffee deserves a great cup. Our paper cups, designed for Gourmet Fresh Coffee, bring together strength, sustainability, and style — the perfect blend for your perfect brew." },
+    { img: "/images/c2.png", name: "COFFE EAT", desc: "For those who appreciate both taste and aesthetics. Enhance your brand with a cup that feels just as good as the drink inside." },
+    { img: "/images/c4.png", name: "FRESHLY ROASTED", desc: "Preserve the rich aroma and heat of freshly roasted beans with our premium, insulated double-wall paper cups." },
+    { img: "/images/c5.png", name: "PREMIUM ROAST", desc: "An exclusive experience in every sip. Crafted for premium blends, offering the highest quality material and eco-friendly standards." }
+  ];
+
+  const [activeCup, setActiveCup] = useState(0);
+
+  const handleNextCup = () => setActiveCup((prev) => (prev + 1) % heroCups.length);
+  const handlePrevCup = () => setActiveCup((prev) => (prev === 0 ? heroCups.length - 1 : prev - 1));
+
+  const currentCup = heroCups[activeCup];
+  const nextCup = heroCups[(activeCup + 1) % heroCups.length];
 
   useGSAP(() => {
     if (!cupRef.current || !containerRef.current) return;
@@ -78,8 +93,33 @@ export default function Home() {
 
   }, { scope: containerRef });
 
+  useGSAP(() => {
+    // Kill any existing tweens to prevent overlaps
+    gsap.killTweensOf(".carousel-text-animate");
+    gsap.killTweensOf(".carousel-main-img-animate");
+    gsap.killTweensOf(".carousel-next-img-animate");
+
+    // Animate the text beautifully
+    gsap.fromTo(".carousel-text-animate", 
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: "power3.out" }
+    );
+    
+    // Animate the main product image with a nice organic scaling entrance
+    gsap.fromTo(".carousel-main-img-animate", 
+      { opacity: 0, scale: 0.82, rotate: -6 },
+      { opacity: 1, scale: 1, rotate: 0, duration: 0.9, ease: "back.out(1.4)" }
+    );
+    
+    // Animate the next product preview image
+    gsap.fromTo(".carousel-next-img-animate", 
+      { opacity: 0, x: 50, scale: 0.8 },
+      { opacity: 0.8, x: 0, scale: 0.9, duration: 0.9, ease: "power3.out" }
+    );
+  }, { dependencies: [activeCup], scope: containerRef });
+
   return (
-    <div ref={containerRef} className="bg-[#5FBBB5] text-[#17252a] font-dm-sans text-base sm:text-lg leading-[1.5] min-h-screen pt-[80px]">
+    <div ref={containerRef} className="bg-[#E9EFE6] text-[#1E1E1E] font-inter text-base sm:text-lg leading-[1.5] min-h-screen pt-[80px]">
       <style>{`
         @keyframes scroll-marquee-up {
           0% { transform: translateY(0); }
@@ -112,63 +152,63 @@ export default function Home() {
         }
         .marquee-column-container::before {
           top: 0;
-          background: linear-gradient(to bottom, #5FBBB5 0%, transparent 100%);
+          background: linear-gradient(to bottom, #E9EFE6 0%, transparent 100%);
         }
         .marquee-column-container::after {
           bottom: 0;
-          background: linear-gradient(to top, #5FBBB5 0%, transparent 100%);
+          background: linear-gradient(to top, #E9EFE6 0%, transparent 100%);
         }
       `}</style>
-      <div className="font-sans">
+      <div className="font-inter">
         <div>
           <div className="relative z-0">
             {/* Top Gourmet Section */}
-            <div className="min-h-screen font-poppins relative overflow-hidden select-none">
-              <div style={{ backgroundColor: '#5FBBB5' }} className="absolute inset-0 z-0 transition-bg">
-                <div style={{ backgroundColor: '#5FBBB5', animation: 'circleRevealAnim 1s cubic-bezier(.66,.34,.29,1.2) forwards', clipPath: 'circle(0% at 63% 55%)', zIndex: 1 }} className="absolute inset-0"></div>
+            <div className="min-h-screen font-montserrat relative overflow-hidden select-none">
+              <div style={{ backgroundColor: '#E9EFE6' }} className="absolute inset-0 z-0 transition-bg">
+                <div style={{ backgroundColor: '#E9EFE6', animation: 'circleRevealAnim 1s cubic-bezier(.66,.34,.29,1.2) forwards', clipPath: 'circle(0% at 63% 55%)', zIndex: 1 }} className="absolute inset-0"></div>
               </div>
               <main className="h-[calc(100vh-64px)] flex md:flex-row flex-col-reverse w-full relative pt-16">
-                <section className="flex flex-col justify-center pl-[5vw] pr-[2vw] w-full md:w-[48%] border-r border-white/30 z-10 relative">
-                  <h1 className="font-aboreto text-[3vw] leading-[1.1] text-white mb-4 animate-showContent">GOURMET FRESH COFFEE</h1>
-                  <p className="text-white mb-8 max-w-[90%] animate-showContent delay-300">
-                    Great coffee deserves a great cup. Our paper cups, designed for Gourmet Fresh Coffee, bring together strength, sustainability, and style — the perfect blend for your perfect brew.
+                <section className="flex flex-col justify-center pl-[5vw] pr-[2vw] w-full md:w-[48%] border-r border-[#31473A]/10 z-10 relative">
+                  <h1 key={`title-${activeCup}`} className="carousel-text-animate font-montserrat text-[3vw] leading-[1.1] text-[#31473A] mb-4">{currentCup.name}</h1>
+                  <p key={`desc-${activeCup}`} className="carousel-text-animate text-[#31473A] mb-8 max-w-[90%]">
+                    {currentCup.desc}
                   </p>
                   <Link href="/about">
-                    <button className="bg-[#17252a] text-white px-8 py-2 rounded-full font-poppins font-semibold w-fit hover:bg-[#16423B] transition-all shadow-md">know more</button>
+                    <button className="bg-[#1E1E1E] text-white px-8 py-2 rounded-full font-montserrat font-semibold w-fit hover:bg-[#31473A] transition-all shadow-md">know more</button>
                   </Link>
                 </section>
                 <section className="w-full md:w-[52%] flex flex-row items-center relative overflow-x-visible z-10">
                   <div className="flex flex-row items-center h-full w-full relative gap-10">
-                    <div className="flex flex-col items-center justify-center w-2/3 h-full relative ">
-                      <Image src="/images/c1.png" alt="GOURMET FRESH COFFEE" width={500} height={500} className="object-contain h-[55vh] mt-6" />
-                      <figcaption className="font-aboreto text-black text-base text-center mt-3">GOURMET FRESH COFFEE</figcaption>
+                    <div className="flex flex-col items-center justify-center w-2/3 h-full relative">
+                      <Image key={`img1-${activeCup}`} src={currentCup.img} alt={currentCup.name} width={500} height={500} className="carousel-main-img-animate object-contain h-[55vh] mt-6" />
+                      <figcaption className="font-montserrat text-[#31473A] font-bold text-base text-center mt-3">{currentCup.name}</figcaption>
                     </div>
                     <div className="w-1/3 h-full flex items-center justify-center relative overflow-visible">
-                      <Image src="/images/c2.png" alt="COFFE EAT" width={300} height={300} className="object-contain h-[41vh] opacity-80 translate-x-[-30%] scale-90" />
-                      <figcaption style={{ position: 'absolute', bottom: '30px', left: '50%', transform: 'translateX(-50%)' }} className="font-aboreto text-black text-xs text-center mt-3 w-28 truncate">COFFE EAT</figcaption>
+                      <Image key={`img2-${activeCup}`} src={nextCup.img} alt={nextCup.name} width={300} height={300} className="carousel-next-img-animate object-contain h-[41vh] opacity-80 translate-x-[-30%] scale-90" />
+                      <figcaption style={{ position: 'absolute', bottom: '30px', left: '50%', transform: 'translateX(-50%)' }} className="font-montserrat text-[#31473A] font-bold text-xs text-center mt-3 w-28 truncate">{nextCup.name}</figcaption>
                     </div>
-                    <div className="absolute left-0 top-0 h-full border-l border-white/30 z-10"></div>
+                    <div className="absolute left-0 top-0 h-full border-l border-[#31473A]/10 z-10"></div>
                   </div>
                   <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 z-20">
-                    <button aria-label="Previous Product" className="bg-white/20 border border-white/80 rounded-full w-8 h-8 flex items-center justify-center font-bold text-black hover:bg-white/40">&lt;</button>
-                    <button aria-label="Next Product" className="bg-white/20 border border-white/80 rounded-full w-8 h-8 flex items-center justify-center font-bold text-black hover:bg-white/40">&gt;</button>
+                    <button onClick={handlePrevCup} aria-label="Previous Product" className="bg-[#31473A]/10 border border-[#31473A]/30 rounded-full w-10 h-10 flex items-center justify-center font-bold text-[#31473A] hover:bg-[#31473A]/20 transition-all shadow-sm">&lt;</button>
+                    <button onClick={handleNextCup} aria-label="Next Product" className="bg-[#31473A]/10 border border-[#31473A]/30 rounded-full w-10 h-10 flex items-center justify-center font-bold text-[#31473A] hover:bg-[#31473A]/20 transition-all shadow-sm">&gt;</button>
                   </div>
                 </section>
               </main>
             </div>
 
             {/* Our Products Mini Section */}
-            <div className="w-full bg-[#5FBBB5] py-8 px-4">
+            <div className="w-full bg-[#E9EFE6] py-8 px-4">
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-8 text-left">Our Products</h2>
                 <div className="flex flex-wrap justify-around gap-6 md:gap-8">
                   {[
-                    { name: 'Single Wall Paper Cups', img: '/images/cup6.png', color: '#A6D6D3' },
+                    { name: 'Single Wall Paper Cups', img: '/images/cup6.png', color: '#CBB89D' },
                     { name: 'Double Wall Paper Cups', img: '/images/cup9.png', color: '#FFB6B9' },
                     { name: 'Rippled Paper Cups', img: '/images/cup9.png', color: '#F9E79F' },
-                    { name: 'Paper Food Container', img: '/images/cup6.png', color: '#85C1B6' },
+                    { name: 'Paper Food Container', img: '/images/cup6.png', color: '#CBB89D' },
                     { name: 'Paper Straws', img: '/images/cup9.png', color: '#D7BDE2' },
-                    { name: 'Lid for Paper Cups', img: '/images/cup6.png', color: '#7DCEA0' },
+                    { name: 'Lid for Paper Cups', img: '/images/cup6.png', color: '#CBB89D' },
                   ].map((product, idx) => (
                     <div key={idx} className="flex flex-col items-center text-center max-w-[120px] mx-4">
                       <div className={`w-40 h-40 rounded-full flex items-center justify-center mb-3 cursor-pointer hover:scale-105 transition-transform duration-200 overflow-hidden`} style={{ backgroundColor: product.color }}>
@@ -194,35 +234,35 @@ export default function Home() {
               />
 
               <section id="section1" className="h-screen w-full max-w-[90vw] lg:max-w-[60vw] mx-auto flex items-center justify-center text-center px-4">
-                <h1 className="heading font-outfit font-bold text-[clamp(2rem,8vw,11.5vw)] lg:text-[11.5vw] leading-[0.85] uppercase text-white mb-0">
+                <h1 className="heading font-montserrat font-bold text-[clamp(2rem,8vw,11.5vw)] lg:text-[11.5vw] leading-[0.85] uppercase text-[#31473A] mb-0">
                   Paper Cups & Straws
                 </h1>
               </section>
 
               <section id="section2" className="min-h-screen pt-8 sm:pt-16 lg:pt-[4vw]">
                 <div className="content-wrapper max-w-[500px] px-4 sm:px-0">
-                  <h2 className="heading font-outfit font-bold text-4xl sm:text-6xl lg:text-8xl uppercase text-white mb-6">Sip sustainably!</h2>
+                  <h2 className="heading font-montserrat font-bold text-4xl sm:text-6xl lg:text-8xl uppercase text-[#31473A] mb-6">Sip sustainably!</h2>
                   <p className="pb-6 sm:pb-10 text-sm sm:text-base">Our eco-friendly paper cups & straws are designed to serve your favorite brew while caring for the planet. Because great taste should never come at nature's expense.</p>
-                  <Link href="/compostable" className="btn bg-[#17252a] mt-4 sm:mt-8 text-white px-4 sm:px-5 py-2 font-medium rounded-[10px] text-sm sm:text-base">Know More</Link>
+                  <Link href="/compostable" className="btn bg-[#1E1E1E] mt-4 sm:mt-8 text-white px-4 sm:px-5 py-2 font-medium rounded-[10px] text-sm sm:text-base">Know More</Link>
                 </div>
                 <div className="feature-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-[1.8rem] mt-8 sm:mt-12 lg:mt-[8vw] px-4 sm:px-0">
-                  <div className="feature-box border-2 border-[#2E2E2E] px-4 sm:px-5 py-4 sm:py-6 rounded-[10px]">
-                    <div className="feature-name font-outfit uppercase text-base sm:text-lg mb-2">Eco-Friendly by Design</div>
+                  <div className="feature-box border-2 border-[#1E1E1E] px-4 sm:px-5 py-4 sm:py-6 rounded-[10px]">
+                    <div className="feature-name font-montserrat uppercase text-base sm:text-lg mb-2">Eco-Friendly by Design</div>
                     <div className="feature-detail text-sm sm:text-base">Made from biodegradable, food-grade materials that are safe for you and gentle on the planet.</div>
                   </div>
-                  <div className="feature-box border-2 border-[#2E2E2E] px-4 sm:px-5 py-4 sm:py-6 rounded-[10px]">
-                    <div className="feature-name font-outfit uppercase text-base sm:text-lg mb-2">Sustainable & Responsible</div>
+                  <div className="feature-box border-2 border-[#1E1E1E] px-4 sm:px-5 py-4 sm:py-6 rounded-[10px]">
+                    <div className="feature-name font-montserrat uppercase text-base sm:text-lg mb-2">Sustainable & Responsible</div>
                     <div className="feature-detail text-sm sm:text-base">A smart alternative to plastic, reducing waste while keeping your beverage experience intact.</div>
                   </div>
-                  <div className="feature-box border-2 border-[#2E2E2E] px-4 sm:px-5 py-4 sm:py-6 rounded-[10px] sm:col-span-2 lg:col-span-1">
-                    <div className="feature-name font-outfit uppercase text-base sm:text-lg mb-2">Strong, Stylish & Green</div>
+                  <div className="feature-box border-2 border-[#1E1E1E] px-4 sm:px-5 py-4 sm:py-6 rounded-[10px] sm:col-span-2 lg:col-span-1">
+                    <div className="feature-name font-montserrat uppercase text-base sm:text-lg mb-2">Strong, Stylish & Green</div>
                     <div className="feature-detail text-sm sm:text-base">Durable, spill-proof, and crafted to complement every coffee, chai, or cold brew; without harming nature.</div>
                   </div>
                 </div>
               </section>
 
               <section id="section3" className="min-h-screen pt-8 sm:pt-16 lg:pt-[4vw] pb-8 sm:pb-16 lg:pb-[4vw] px-4 sm:px-0">
-                <h2 className="heading font-outfit font-bold text-center mb-8 sm:mb-12 lg:mb-[3vw] text-[clamp(2rem,8vw,13.5rem)] text-white uppercase">About Us</h2>
+                <h2 className="heading font-montserrat font-bold text-center mb-8 sm:mb-12 lg:mb-[3vw] text-[clamp(2rem,8vw,13.5rem)] text-[#31473A] uppercase">About Us</h2>
                 <div className="content-wrapper flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-24 items-center">
                   <Image src="/images/papercup-machine-4.jpg" alt="About Us" width={500} height={500} className="rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg w-full max-w-[500px] order-2 lg:order-1" />
                   <div className="content max-w-[500px] lg:ml-auto order-1 lg:order-2">
@@ -240,7 +280,7 @@ export default function Home() {
               </section>
 
               <section id="section5" className="text-center pt-8 sm:pt-16 lg:pt-[4vw] pb-16 sm:pb-24 lg:pb-[8vw] min-h-[94vh] px-4 sm:px-0">
-                <h2 className="heading font-outfit font-bold text-[clamp(2rem,6.5vw,6.5vw)] uppercase text-white mb-6">Top Picks</h2>
+                <h2 className="heading font-montserrat font-bold text-[clamp(2rem,6.5vw,6.5vw)] uppercase text-[#31473A] mb-6">Top Picks</h2>
                 <div className="product-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6 mt-8 sm:mt-18">
                   <div className="product flex flex-col items-center justify-end">
                     <Image src="/images/cup9.png" alt="green" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" />
@@ -262,17 +302,17 @@ export default function Home() {
       </div>
 
       {/* ── Trusted by Brands ── */}
-      <section className="w-full bg-[#5FBBB5] px-6 py-20">
+      <section className="w-full bg-[#E9EFE6] px-6 py-20">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
           {/* Left text */}
           <div className="lg:w-2/5 flex-shrink-0">
-            <h2 className="font-outfit font-bold text-4xl md:text-5xl leading-tight text-white">
-              Trusted by <span className="text-[#16423B]">Brands,</span><br />Served with Care
+            <h2 className="font-montserrat font-bold text-4xl md:text-5xl leading-tight text-[#31473A]">
+              Trusted by <span className="text-[#31473A]">Brands,</span><br />Served with Care
             </h2>
-            <p className="mt-5 text-white/80 max-w-md leading-relaxed">
+            <p className="mt-5 text-[#31473A]/80 max-w-md leading-relaxed">
               From your favourite cafés to leading food chains, our eco-friendly cups and straws carry the mark of quality and reliability. Each brand you see here partners with us to ensure their beverages are served in style — sustainably, safely, and with a touch of innovation.
             </p>
-            <Link href="/about" className="mt-8 inline-flex items-center gap-2 bg-[#17252a] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#16423B] transition-colors shadow-md">
+            <Link href="/about" className="mt-8 inline-flex items-center gap-2 bg-[#1E1E1E] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#31473A] transition-colors shadow-md">
               Explore Integration <span aria-hidden>›</span>
             </Link>
           </div>
@@ -324,9 +364,9 @@ export default function Home() {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-20 bg-[#5FBBB5]">
+      <section className="py-20 bg-[#E9EFE6]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#31473A] mb-16 tracking-tight">
             Our Certifications
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -352,7 +392,7 @@ export default function Home() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#16423B] tracking-wide">
+              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
                 BRC
               </h3>
             </div>
@@ -379,7 +419,7 @@ export default function Home() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#16423B] tracking-wide">
+              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
                 FSSC 22000
               </h3>
             </div>
@@ -406,7 +446,7 @@ export default function Home() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#16423B] tracking-wide">
+              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
                 SEDEX
               </h3>
             </div>
@@ -433,7 +473,7 @@ export default function Home() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#16423B] tracking-wide">
+              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
                 ISO 22000:2005
               </h3>
             </div>

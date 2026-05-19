@@ -59,29 +59,29 @@ export default function Header() {
             </button>
           </div>
           <div className="flex-1 overflow-y-auto px-6 py-8">
-             <nav className="space-y-2">
-               <Link onClick={() => setIsMenuOpen(false)} href="/about" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#2F5D50]/20 hover:text-[#2F5D50] transition-all duration-300 transform hover:translate-x-2">About</Link>
-               <div className="bg-[#31473A]/10 rounded-lg overflow-hidden">
-                  <div className="text-[#31473A] text-lg font-medium py-4 px-4 border-b border-[#2F5D50]/30">Our Products</div>
-                  <div className="px-4">
-                     <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#2F5D50] transition-colors">
-                        Beverage Serving <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
-                     </button>
-                  </div>
-                  <div className="px-4 border-t border-[#2F5D50]/30">
-                     <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#2F5D50] transition-colors">
-                        Food Serving <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
-                     </button>
-                  </div>
-                  <div className="px-4 border-t border-[#2F5D50]/30">
-                     <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#2F5D50] transition-colors">
-                        Serving Add-on <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
-                     </button>
-                  </div>
-               </div>
-               <Link onClick={() => setIsMenuOpen(false)} href="/compostable" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#2F5D50]/20 hover:text-[#2F5D50] transition-all duration-300 transform hover:translate-x-2">Compostable Paper Cups</Link>
-               <Link onClick={() => setIsMenuOpen(false)} href="/contact" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#2F5D50]/20 hover:text-[#2F5D50] transition-all duration-300 transform hover:translate-x-2">Contact</Link>
-             </nav>
+            <nav className="space-y-2">
+              <Link onClick={() => setIsMenuOpen(false)} href="/about" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#2F5D50]/20 hover:text-[#2F5D50] transition-all duration-300 transform hover:translate-x-2">About</Link>
+              <div className="bg-[#31473A]/10 rounded-lg overflow-hidden">
+                <div className="text-[#31473A] text-lg font-medium py-4 px-4 border-b border-[#2F5D50]/30">Our Products</div>
+                <div className="px-4">
+                  <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#2F5D50] transition-colors">
+                    Beverage Serving <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
+                  </button>
+                </div>
+                <div className="px-4 border-t border-[#2F5D50]/30">
+                  <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#2F5D50] transition-colors">
+                    Food Serving <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
+                  </button>
+                </div>
+                <div className="px-4 border-t border-[#2F5D50]/30">
+                  <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#2F5D50] transition-colors">
+                    Serving Add-on <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
+                  </button>
+                </div>
+              </div>
+              <Link onClick={() => setIsMenuOpen(false)} href="/compostable" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#2F5D50]/20 hover:text-[#2F5D50] transition-all duration-300 transform hover:translate-x-2">Compostable Paper Cups</Link>
+              <Link onClick={() => setIsMenuOpen(false)} href="/contact" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#2F5D50]/20 hover:text-[#2F5D50] transition-all duration-300 transform hover:translate-x-2">Contact</Link>
+            </nav>
           </div>
         </div>
       </div>

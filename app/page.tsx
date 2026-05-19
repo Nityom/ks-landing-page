@@ -35,7 +35,7 @@ export default function Home() {
 
     let i = window.innerHeight < 1050;
     let mm = gsap.matchMedia();
-    
+
     mm.add("(min-width: 991px)", () => {
       gsap.to(cupRef.current, {
         scrollTrigger: { trigger: "#section2", start: "top bottom", end: "center center", scrub: true },
@@ -49,9 +49,9 @@ export default function Home() {
         scrollTrigger: { trigger: "#section4", start: "top bottom", end: "center center", scrub: true },
         y: "308vh", width: "42vw", rotate: 0, ease: "power1.inOut", immediateRender: false
       });
-      
+
       // Infinite "burst" explosion scale-up transition for the three floating cups emerging from behind the headphone cup
-      gsap.fromTo([".img1", ".img2", ".img3"], 
+      gsap.fromTo([".img1", ".img2", ".img3"],
         {
           scale: 0.1,
           opacity: 0,
@@ -100,19 +100,19 @@ export default function Home() {
     gsap.killTweensOf(".carousel-next-img-animate");
 
     // Animate the text beautifully
-    gsap.fromTo(".carousel-text-animate", 
+    gsap.fromTo(".carousel-text-animate",
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: "power3.out" }
     );
-    
+
     // Animate the main product image with a nice organic scaling entrance
-    gsap.fromTo(".carousel-main-img-animate", 
+    gsap.fromTo(".carousel-main-img-animate",
       { opacity: 0, scale: 0.82, rotate: -6 },
       { opacity: 1, scale: 1, rotate: 0, duration: 0.9, ease: "back.out(1.4)" }
     );
-    
+
     // Animate the next product preview image
-    gsap.fromTo(".carousel-next-img-animate", 
+    gsap.fromTo(".carousel-next-img-animate",
       { opacity: 0, x: 50, scale: 0.8 },
       { opacity: 0.8, x: 0, scale: 0.9, duration: 0.9, ease: "power3.out" }
     );
@@ -381,7 +381,7 @@ export default function Home() {
                   className="object-contain max-h-16"
                 />
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
                 style={{ width: '220px', height: '308px' }}
               >
@@ -408,7 +408,7 @@ export default function Home() {
                   className="object-contain max-h-16"
                 />
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
                 style={{ width: '220px', height: '308px' }}
               >
@@ -435,7 +435,7 @@ export default function Home() {
                   className="object-contain max-h-16"
                 />
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
                 style={{ width: '220px', height: '308px' }}
               >
@@ -462,7 +462,7 @@ export default function Home() {
                   className="object-contain max-h-16"
                 />
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
                 style={{ width: '220px', height: '308px' }}
               >

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function CompostablePage() {
   return (
     <div className="min-h-screen bg-[#E9EFE6] font-inter text-[#31473A]" style={{ paddingTop: '160px', paddingBottom: '120px' }}>
-      
+
       {/* Page Header (Centered) */}
       <div className="max-w-6xl mx-auto px-6 mb-16 text-center">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-wide mb-6 text-[#31473A]">
@@ -40,10 +40,10 @@ export default function CompostablePage() {
             By choosing our compostable cups, you&apos;re not just serving drinks—you&apos;re making a statement about your brand&apos;s commitment to the environment.
           </p>
         </div>
-        
+
         <div className="flex justify-center">
-          <Image 
-            src="/images/comp-1.png" 
+          <Image
+            src="/images/comp-1.png"
             alt="Pure Flavour Zero Plastic Cup"
             width={380}
             height={480}
@@ -59,7 +59,7 @@ export default function CompostablePage() {
           <h3 className="text-2xl font-bold text-center mb-10">
             Key Highlights of Our Certified Compostable Paper Cups
           </h3>
-          
+
           <div className="grid md:grid-cols-3 gap-10">
             {/* Item 1 */}
             <div>
@@ -104,16 +104,16 @@ export default function CompostablePage() {
             <Award className="w-7 h-7 text-[#31473A] opacity-60" strokeWidth={1.5} />
             <h3 className="text-2xl font-bold">CPCB Certification Verification</h3>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: QR Code */}
             <div className="flex flex-col items-center">
               <div className="bg-white p-6 rounded-xl shadow-sm mb-4 inline-block">
-                <Image 
-                  src="/images/qr.png" 
-                  alt="Certificate QR Code" 
-                  width={180} 
-                  height={180} 
+                <Image
+                  src="/images/qr.png"
+                  alt="Certificate QR Code"
+                  width={180}
+                  height={180}
                   className="object-contain"
                 />
               </div>

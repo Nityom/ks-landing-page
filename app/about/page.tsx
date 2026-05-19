@@ -89,7 +89,7 @@ export default function AboutPage() {
                   className="object-contain max-h-16"
                 />
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
                 style={{ width: '220px', height: '308px' }}
               >
@@ -116,7 +116,7 @@ export default function AboutPage() {
                   className="object-contain max-h-16"
                 />
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
                 style={{ width: '220px', height: '308px' }}
               >
@@ -143,7 +143,7 @@ export default function AboutPage() {
                   className="object-contain max-h-16"
                 />
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
                 style={{ width: '220px', height: '308px' }}
               >
@@ -170,7 +170,7 @@ export default function AboutPage() {
                   className="object-contain max-h-16"
                 />
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
                 style={{ width: '220px', height: '308px' }}
               >

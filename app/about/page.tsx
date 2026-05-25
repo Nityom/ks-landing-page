@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | WorldStar Packaging Industry",
+  title: "About Us | KS Manufactory",
   description:
-    "We are India's Largest Paper Cup Manufacturers and Exporter. Each piece demonstrates sophisticated craftsmanship, blending traditional techniques with contemporary design principles.",
+    "KS Manufactory manufactures premium paper cups and buffet plates — eco-friendly, food-safe, and crafted with care.",
 };
 
 export default function AboutPage() {
@@ -17,7 +17,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-sm mb-4 font-light text-gray-200">
-                We are India&apos;s Largest Paper Cup Manufacturers and Exporter
+                Manufacturers of Premium Paper Cups &amp; Buffet Plates
               </p>
               <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-8 text-[#31473A] uppercase leading-none">
                 ABOUT<br />
@@ -26,7 +26,7 @@ export default function AboutPage() {
             </div>
             <div className="md:text-right">
               <p className="text-sm md:text-base mb-4 font-light text-gray-800 max-w-md md:ml-auto leading-relaxed">
-                Each piece demonstrates sophisticated craftsmanship, blending traditional techniques with contemporary design principles.
+                Every product we make reflects careful craftsmanship, blending quality materials with functional design for food service businesses.
               </p>
             </div>
           </div>
@@ -43,25 +43,25 @@ export default function AboutPage() {
           </div>
           <div className="text-left mb-16 text-[#31473A] space-y-4 max-w-5xl mx-auto leading-relaxed tracking-wider text-base md:text-lg">
             <p>
-              At WorldStar Packaging, we are proud to be India&apos;s largest paper cup manufacturer and exporter, with over 27 years of experience delivering premium packaging solutions. Our expertise spans across RTD (Ready-to-Drink) packaging, serving a wide spectrum of businesses, from iconic Indian brands to global clients.
+              KS Manufactory is a trusted manufacturer of paper cups and buffet plates, delivering premium packaging solutions backed by years of experience. Our focus spans food-service packaging, serving a wide spectrum of businesses, from local brands to regional clients.
             </p>
             <p>
-              Some of our valued customers include Nestlé India, Café Coffee Day, Chaayos, IRCTC, Haldiram&apos;s, AirAsia, IndiGo Airlines, and many others. In recent years, we have also expanded our footprint to Europe, offering our globally compliant packaging solutions to meet international standards.
+              We serve a wide spectrum of businesses — from local cafés and restaurants to catering companies and food service providers — who trust us for consistent quality and on-time delivery.
             </p>
             <p>
-              Every product we create reflects precision, craftsmanship, and innovative design. Equipped with state-of-the-art machinery and a fully integrated in-house production process, we have the capacity to produce over 4 million cups daily, all backed by a robust traceability system.
+              Every product we create reflects precision, craftsmanship, and thoughtful design. Our paper cups and buffet plates are manufactured with food-safe materials to meet the highest safety and quality standards.
             </p>
             <p>
               Quality and safety are at the core of our operations. We are ISO 9000 and SEDEX certified, and all our products undergo stringent food safety testing by SGS.
             </p>
             <p>
-              At WorldStar Packaging, we are committed to sustainability, reliability, and innovation, helping brands serve every sip with style, safety, and care.
+              At KS Manufactory, we are committed to sustainability, reliability, and innovation, helping brands serve every sip with style, safety, and care.
             </p>
           </div>
           <div className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
             <Image
-              alt="Metal WorldStar Factory Production"
-              src="/images/cup10.jpg"
+              alt="KS Manufactory Production"
+              src="/assets/img-6.png"
               width={1200}
               height={600}
               className="w-full object-cover h-[450px]"
@@ -77,7 +77,7 @@ export default function AboutPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-center text-[#31473A] mb-16 tracking-tight">
             Our Certifications
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             {/* Card 1: BRC */}
             <div className="bg-white rounded-3xl p-8 border border-white/20 shadow-xl flex flex-col items-center justify-between min-h-[520px] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
               <div className="w-full flex justify-center items-center h-20 mb-6 relative">
@@ -86,7 +86,8 @@ export default function AboutPage() {
                   src="/images/cl-1.png"
                   width={160}
                   height={64}
-                  className="object-contain max-h-16"
+                  className="object-contain"
+                  style={{ width: 'auto', maxHeight: '4rem' }}
                 />
               </div>
               <div
@@ -95,8 +96,9 @@ export default function AboutPage() {
               >
                 <Image
                   alt="BRC Certificate"
-                  src="/images/BRC.jpg"
+                  src="/assets/certificate-1.jpg"
                   fill
+                  sizes="220px"
                   className="object-contain p-2 bg-white"
                 />
               </div>
@@ -113,7 +115,8 @@ export default function AboutPage() {
                   src="/images/cl-2.png"
                   width={160}
                   height={64}
-                  className="object-contain max-h-16"
+                  className="object-contain"
+                  style={{ width: 'auto', maxHeight: '4rem' }}
                 />
               </div>
               <div
@@ -122,8 +125,9 @@ export default function AboutPage() {
               >
                 <Image
                   alt="FSSC Certificate"
-                  src="/images/fssc.jpg"
+                  src="/assets/certificate-1.jpg"
                   fill
+                  sizes="220px"
                   className="object-contain p-2 bg-white"
                 />
               </div>
@@ -140,7 +144,8 @@ export default function AboutPage() {
                   src="/images/cl-3.png"
                   width={160}
                   height={64}
-                  className="object-contain max-h-16"
+                  className="object-contain"
+                  style={{ width: 'auto', maxHeight: '4rem' }}
                 />
               </div>
               <div
@@ -149,40 +154,14 @@ export default function AboutPage() {
               >
                 <Image
                   alt="Sedex Certificate"
-                  src="/images/smet2-sEDXE.jpg"
+                  src="/assets/certificate-1.jpg"
                   fill
+                  sizes="220px"
                   className="object-contain p-2 bg-white"
                 />
               </div>
               <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
                 SEDEX
-              </h3>
-            </div>
-
-            {/* Card 4: ISO 22000:2005 */}
-            <div className="bg-white rounded-3xl p-8 border border-white/20 shadow-xl flex flex-col items-center justify-between min-h-[520px] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
-              <div className="w-full flex justify-center items-center h-20 mb-6 relative">
-                <Image
-                  alt="ISO Logo"
-                  src="/images/cl-5.png"
-                  width={160}
-                  height={64}
-                  className="object-contain max-h-16"
-                />
-              </div>
-              <div
-                className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
-                style={{ width: '220px', height: '308px' }}
-              >
-                <Image
-                  alt="ISO Certificate"
-                  src="/images/ISO-22000-2005.jpg"
-                  fill
-                  className="object-contain p-2 bg-white"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
-                ISO 22000:2005
               </h3>
             </div>
           </div>
@@ -199,7 +178,7 @@ export default function AboutPage() {
                   Our Commitment: Quality, Value, and Service
                 </h2>
                 <p className="mt-6 max-w-2xl text-base leading-7 text-[#2F5D50] md:text-lg md:leading-8">
-                  At WorldStar Packaging, we are dedicated to delivering premium paper cups and related products that combine superior quality with true value. Meeting and exceeding our customers’ expectations is at the heart of everything we do.
+                  At KS Manufactory, we are dedicated to delivering premium paper cups and buffet plates that combine superior quality with true value. Meeting and exceeding our customers' expectations is at the heart of everything we do.
                 </p>
                 <p className="mt-6 max-w-2xl text-base font-semibold text-[#31473A] md:text-lg">
                   Why Choose Us:
@@ -208,7 +187,7 @@ export default function AboutPage() {
                   {[
                     "Trusted wholesale supplier at affordable prices",
                     "No hidden costs—transparent pricing always",
-                    "Wide variety of paper cups and accessories, including Ripples Paper Cups and Paper Straws",
+                    "Wide variety of paper cups and buffet plates at every size and specification",
                     "Fast and reliable shipment to ensure your business runs smoothly",
                   ].map((bullet, i) => (
                     <div
@@ -249,10 +228,10 @@ export default function AboutPage() {
             <div className="relative w-full max-w-[500px] mx-auto">
               <Image
                 alt="Ripple Cup Red"
-                src="/images/cup8.png"
+                src="/assets/img-3.png"
                 width={500}
                 height={600}
-                className="w-full object-cover"
+                className="w-full object-contain"
                 style={{ height: 'auto' }}
                 priority
               />
@@ -262,13 +241,13 @@ export default function AboutPage() {
                 &ldquo;Where Design Meets Function&rdquo;
               </h3>
               <p className="font-light mb-8 leading-relaxed text-[#1E1E1E] text-lg">
-                Our paper cups and straws are more than just packaging, they&apos;re a canvas for creativity.
+                Our paper cups and buffet plates are more than just packaging, they&apos;re a canvas for creativity.
               </p>
               <div className="grid grid-cols-3 gap-4 mb-8">
                 {[
-                  { src: "/images/cup6.png", alt: "Embossed Design Thumbnail" },
-                  { src: "/images/ab1.png", alt: "Latte Coffee Thumbnail" },
-                  { src: "/images/ab2.png", alt: "Eco Straws Thumbnail" },
+                  { src: "/assets/img-1.png", alt: "Single Wall Paper Cup" },
+                  { src: "/assets/img-2.png", alt: "Double Wall Paper Cup" },
+                  { src: "/assets/plate.png", alt: "Buffet Plate" },
                 ].map((thumb, idx) => (
                   <div key={idx} className="relative w-full aspect-square">
                     <Image
@@ -276,7 +255,8 @@ export default function AboutPage() {
                       src={thumb.src}
                       width={180}
                       height={180}
-                      className="w-full h-full object-contain"
+                      className="w-full object-contain"
+                      style={{ height: 'auto' }}
                     />
                   </div>
                 ))}

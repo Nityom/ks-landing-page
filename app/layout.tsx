@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WorldStar Packaging Industry",
-  description: "At WorldStar Packaging, we are proud to be India's largest paper cup manufacturer and exporter",
+  title: "KS Manufactory",
+  description: "KS Manufactory specialises in high-quality paper cups and buffet plates, combining innovation, sustainability, and trust.",
 };
 
 export default function RootLayout({

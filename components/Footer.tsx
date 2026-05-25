@@ -52,26 +52,12 @@ export default function Footer() {
           {/* Column 1: Logo & Text */}
           <div>
             <div className="flex items-center gap-3">
-              <Image src="/assets/logo.svg" className="max-w-32" alt="logo" width={128} height={128} priority style={{ height: 'auto' }} />
+              <Image src="/assets/logo.svg" alt="KS Manufactory logo" width={128} height={128} priority style={{ maxWidth: '8rem', height: 'auto' }} />
             </div>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-200">
-              For over 27 years, WorldStar Packaging Industry has been shaping the way beverages are served with packaging that blends innovation, sustainability, and trust.
+              KS Manufactory specialises in high-quality paper cups and buffet plates, combining innovation, sustainability, and trust in every product we make.
             </p>
-            <div className="mt-6 flex items-center gap-3 text-white">
-              <a
-                href="https://www.linkedin.com/company/worldstar-packaging-industry/about/?viewAsMember=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-white transition-all shadow-sm"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
-            </div>
+           
           </div>
 
           {/* Column 2: Quick Links */}
@@ -93,21 +79,21 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 text-white flex-shrink-0" />
                 <span className="flex-1 text-sm leading-relaxed">
-                  WorldStar Packaging Industry, Plot no 53, sector 53, phase I, HSIIDC Kundli, Sonipat, Haryana-131028
+                  KS Manufactory, Muzaffarpur, Bihar
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-5 w-5 text-white flex-shrink-0" />
-                <span className="flex-1 text-sm select-all font-medium">+91 98105 01613</span>
+                <span className="flex-1 text-sm select-all font-medium">+91 77963 08778</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-5 w-5 text-white flex-shrink-0" />
-                <span className="text-sm flex-1 break-all select-all">worldstarpackagingindustry@gmail.com</span>
+                <span className="text-sm flex-1 break-all select-all">ksmanufactory@gmail.com</span>
               </li>
             </ul>
             <div className="pt-2">
               <a
-                href="/images/Worldstar Packaging Industry Broucher New.pdf"
+                href="/images/KS Manufactory Brochure.pdf"
                 download
                 className="mt-6 inline-block bg-white text-[#31473A] px-6 py-3 rounded-md text-sm font-bold hover:bg-[#E9EFE6] transition-colors shadow-md text-center"
               >
@@ -119,9 +105,9 @@ export default function Footer() {
       </div>
 
       {/* Copyright Line */}
-      <div className="border-t border-white/10 bg-black/10">
+      {/* <div className="border-t border-white/10 bg-black/10">
         <div className="mx-auto max-w-6xl px-6 py-6 text-center text-xs tracking-wider text-gray-300">
-          Copyright © 2025 Worldstar Packaging | Designed by{' '}
+          Copyright © 2026 KS Manufactory | Designed by{' '}
           <a
             href="https://apacedigitalcargo.com/"
             target="_blank"
@@ -131,7 +117,7 @@ export default function Footer() {
             Apace Digital Cargo
           </a>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }

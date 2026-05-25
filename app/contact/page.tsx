@@ -37,15 +37,15 @@ export default function ContactPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#2F5D50]/10 via-[#E9EFE6]/30 to-[#31473A]/90"></div>
         <div className="relative mx-auto max-w-6xl px-4 py-32 sm:py-36 md:py-40 text-center">
-          <h1 className="text-5xl md:text-6xl text-[#31473A] font-bold tracking-tight">
+          <h1 className="text-5xl md:text-6xl text-white font-bold tracking-tight drop-shadow-lg">
             Contact Us
           </h1>
-          <nav className="mt-3 flex items-center justify-center gap-2 text-sm text-[#31473A]/80">
-            <Link className="hover:text-[#31473A] transition-colors" href="/">
+          <nav className="mt-3 flex items-center justify-center gap-2 text-sm text-white/80">
+            <Link className="hover:text-white transition-colors" href="/">
               Home
             </Link>
-            <ChevronRight className="h-4 w-4 opacity-60 text-[#31473A]" />
-            <span className="text-[#31473A]">Contact</span>
+            <ChevronRight className="h-4 w-4 opacity-60 text-white" />
+            <span className="text-white">Contact</span>
           </nav>
         </div>
       </section>
@@ -172,7 +172,7 @@ export default function ContactPage() {
           <div className="flex flex-col justify-between">
             <div>
               <p className="max-w-xl text-[#31473A] leading-relaxed text-base">
-                Have a question or are you ready to take your packaging to the next level? Our team at WorldStar Packaging Industry is always happy to help. Reach out today—let&apos;s create eco-friendly, innovative solutions together!
+                Have a question or are you ready to take your packaging to the next level? Our team at KS Manufactory is always happy to help. Reach out today—let&apos;s create eco-friendly, innovative solutions together!
               </p>
 
               <div className="my-8 grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -184,7 +184,7 @@ export default function ContactPage() {
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-semibold text-[#31473A]">Phone Number</p>
                     <p className="text-sm text-[#31473A] mt-1 font-medium select-all">
-                      +91 98105 01613
+                      +91 7796308778
                     </p>
                   </div>
                 </div>
@@ -196,8 +196,8 @@ export default function ContactPage() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-semibold text-[#31473A]">Email Address</p>
-                    <p className="text-sm text-[#31473A] mt-1 font-medium break-all [overflow-wrap:anywhere] select-all" title="worldstarpackagingindustry@gmail.com">
-                      worldstarpackagingindustry@gmail.com
+                    <p className="text-sm text-[#31473A] mt-1 font-medium break-all [overflow-wrap:anywhere] select-all" title="ksmanufactory@gmail.com">
+                      ksmanufactory@gmail.com.com
                     </p>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function ContactPage() {
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-semibold text-[#31473A]">Our Office</p>
                   <p className="text-sm text-[#31473A] mt-1 leading-relaxed font-medium">
-                    World Star Packaging Industry, Plot no 53, sector 53, phase I, HSIIDC Kundli, Sonipat, Haryana-131028
+                    KS Manufactory, Muzaffarpur, Bihar
                   </p>
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function ContactPage() {
                   style={{ border: 0 }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="WorldStar Packaging Map Location"
+                  title="KS Manufactory Map Location"
                 />
               </div>
             </div>

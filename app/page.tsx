@@ -16,11 +16,11 @@ export default function Home() {
   const targetSpotRef = useRef<HTMLDivElement>(null);
 
   const heroCups = [
-    { img: "/assets/img-1.png", name: "FRESH MIX JUICE", desc: "Vibrant, fruit-filled designs that bring your brand to life. Our paper cups are built for freshness — keeping every sip as lively as the design." },
-    { img: "/assets/img-2.png", name: "COCA-COLA", desc: "Iconic branding meets premium packaging. Crafted to hold your favourite beverages with precision, strength, and eye-catching style." },
-    { img: "/assets/img-3.png", name: "NEWCAFE", desc: "Bold and distinctive — our double-wall paper cups deliver superior insulation for hot beverages while showcasing your brand powerfully." },
-    { img: "/assets/img-4.png", name: "CREATIVE COFFEE CO.", desc: "Premium roasts deserve premium cups. Crafted with passion — our paper cups combine artisan aesthetics with eco-conscious materials." },
-    { img: "/assets/img-5.png", name: "HARVEST HARMONY", desc: "Farm-fresh flavour, beautifully packaged. Our cups for Harvest Harmony Organic Orchards reflect the purity and integrity behind every pour." }
+    { img: "/assets/img-1.png", name: "PAPER CUPS", desc: "Vibrant, custom-printed paper cups built for freshness — keeping every sip as lively as the design. Available in single wall, double wall, and ripple variants." },
+    { img: "/assets/img-2.png", name: "DOUBLE WALL CUPS", desc: "Superior insulation for hot beverages with eye-catching print quality. Our double-wall cups keep drinks warm longer while showcasing your brand powerfully." },
+    { img: "/assets/img-3.png", name: "RIPPLE CUPS", desc: "Bold and distinctive — our ripple paper cups deliver extra grip and insulation for hot beverages while showcasing your brand with a premium feel." },
+    { img: "/assets/plate.png", name: "BUFFET PLATES", desc: "Sturdy, food-safe buffet plates designed for catering, events, and food service. Eco-friendly and built to hold a full meal without compromise." },
+    { img: "/assets/img-5.png", name: "COMPOSTABLE CUPS", desc: "CPCB certified compostable paper cups — 100% biodegradable, food-safe, and the responsible choice for businesses committed to sustainability." }
   ];
 
   const [activeCup, setActiveCup] = useState(0);
@@ -189,10 +189,10 @@ export default function Home() {
                 <section className="w-full md:w-[52%] md:h-full flex flex-col justify-between relative overflow-x-visible z-10 pb-6 md:pb-8">
                   <div className="flex flex-row items-center flex-grow w-full relative gap-10">
                     <div className="flex flex-col items-center justify-center w-2/3 h-full relative">
-                      <Image key={`img1-${activeCup}`} src={currentCup.img} alt={currentCup.name} width={500} height={500} className="carousel-main-img-animate object-contain h-[55vh] md:h-[72vh] mt-6" />
+                      <Image key={`img1-${activeCup}`} src={currentCup.img} alt={currentCup.name} width={500} height={500} loading="eager" className="carousel-main-img-animate object-contain h-[55vh] md:h-[72vh] mt-6" style={{ width: 'auto' }} />
                     </div>
                     <div className="w-1/3 h-full flex items-center justify-center relative overflow-visible">
-                      <Image key={`img2-${activeCup}`} src={nextCup.img} alt={nextCup.name} width={300} height={300} className="carousel-next-img-animate object-contain h-[41vh] md:h-[54vh] opacity-80 translate-x-[-30%] scale-90" />
+                      <Image key={`img2-${activeCup}`} src={nextCup.img} alt={nextCup.name} width={300} height={300} className="carousel-next-img-animate object-contain h-[41vh] md:h-[54vh] opacity-80 translate-x-[-30%] scale-90" style={{ width: 'auto' }} />
                     </div>
                     <div className="absolute left-0 top-0 h-full border-l border-[#31473A]/30 z-10"></div>
                   </div>
@@ -226,10 +226,10 @@ export default function Home() {
                   {[
                     { name: 'Single Wall Paper Cups', img: '/assets/img-1.png', color: '#CBB89D' },
                     { name: 'Double Wall Paper Cups', img: '/assets/img-3.png', color: '#FFB6B9' },
-                    { name: 'Rippled Paper Cups', img: '/assets/img-5.png', color: '#F9E79F' },
-                    { name: 'Paper Food Container', img: '/assets/img-2.png', color: '#CBB89D' },
-                    { name: 'Paper Straws', img: '/assets/img-4.png', color: '#D7BDE2' },
-                    { name: 'Lid for Paper Cups', img: '/assets/img-1.png', color: '#CBB89D' },
+                    { name: 'Ripple Paper Cups', img: '/assets/img-5.png', color: '#F9E79F' },
+                    { name: 'Compostable Paper Cups', img: '/assets/img-2.png', color: '#CBB89D' },
+                    { name: 'Buffet Plates', img: '/assets/plate.png', color: '#D7BDE2' },
+                    
                   ].map((product, idx) => (
                     <div key={idx} className="flex flex-col items-center text-center max-w-[120px] mx-4">
                       <div className={`w-40 h-40 rounded-full flex items-center justify-center mb-3 cursor-pointer hover:scale-105 transition-transform duration-200 overflow-hidden`} style={{ backgroundColor: product.color }}>
@@ -256,14 +256,14 @@ export default function Home() {
 
               <section id="section1" className="h-screen w-full max-w-[90vw] lg:max-w-[60vw] mx-auto flex items-center justify-center text-center px-4">
                 <h1 className="heading font-montserrat font-bold text-[clamp(2rem,8vw,11.5vw)] lg:text-[11.5vw] leading-[0.85] uppercase text-[#31473A] mb-0">
-                  Paper Cups & Straws
+                  Paper Cups &amp; Buffet Plates
                 </h1>
               </section>
 
               <section id="section2" className="min-h-screen pt-8 sm:pt-16 lg:pt-[4vw]">
                 <div className="content-wrapper max-w-[500px] px-4 sm:px-0">
                   <h2 className="heading font-montserrat font-bold text-4xl sm:text-6xl lg:text-8xl uppercase text-[#31473A] mb-6">Sip sustainably!</h2>
-                  <p className="pb-6 sm:pb-10 text-sm sm:text-base">Our eco-friendly paper cups & straws are designed to serve your favorite brew while caring for the planet. Because great taste should never come at nature's expense.</p>
+                  <p className="pb-6 sm:pb-10 text-sm sm:text-base">Our eco-friendly paper cups and buffet plates are designed to serve your favourite food and drinks while caring for the planet. Because great taste should never come at nature&apos;s expense.</p>
                   <Link href="/compostable" className="btn bg-[#1E1E1E] mt-4 sm:mt-8 text-white px-4 sm:px-5 py-2 font-medium rounded-[10px] text-sm sm:text-base">Know More</Link>
                 </div>
                 <div className="feature-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-[1.8rem] mt-8 sm:mt-12 lg:mt-[8vw] px-4 sm:px-0">
@@ -273,11 +273,11 @@ export default function Home() {
                   </div>
                   <div className="feature-box border-2 border-[#1E1E1E] px-4 sm:px-5 py-4 sm:py-6 rounded-[10px]">
                     <div className="feature-name font-montserrat uppercase text-base sm:text-lg mb-2">Sustainable & Responsible</div>
-                    <div className="feature-detail text-sm sm:text-base">A smart alternative to plastic, reducing waste while keeping your beverage experience intact.</div>
+                    <div className="feature-detail text-sm sm:text-base">A smart alternative to plastic, reducing waste while keeping your food and beverage experience intact.</div>
                   </div>
                   <div className="feature-box border-2 border-[#1E1E1E] px-4 sm:px-5 py-4 sm:py-6 rounded-[10px] sm:col-span-2 lg:col-span-1">
                     <div className="feature-name font-montserrat uppercase text-base sm:text-lg mb-2">Strong, Stylish & Green</div>
-                    <div className="feature-detail text-sm sm:text-base">Durable, spill-proof, and crafted to complement every coffee, chai, or cold brew; without harming nature.</div>
+                    <div className="feature-detail text-sm sm:text-base">Durable, spill-proof cups and sturdy buffet plates — crafted to complement every coffee, chai, or meal; without harming nature.</div>
                   </div>
                 </div>
               </section>
@@ -287,9 +287,9 @@ export default function Home() {
                 <div className="content-wrapper flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-24 items-center">
                   <Image src="/assets/plant-1.jpg" alt="About Us" width={500} height={500} className="rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg w-full max-w-[500px] order-2 lg:order-1" style={{ height: 'auto' }} />
                   <div className="content max-w-[500px] lg:ml-auto order-1 lg:order-2">
-                    <p className="mt-4 text-sm sm:text-base">For over 27 years, WorldStar Packaging Industry has been shaping the way beverages are served with packaging that blends innovation, sustainability, and trust. From gourmet coffee brands to quick-service restaurants and leading airlines, we have earned the confidence of clients who value both quality and responsibility.</p>
-                    <p className="mt-4 text-sm sm:text-base">Our journey has always been guided by a simple belief that packaging is more than just a container. It is an extension of the product, the brand, and the experience. Every cup and straw we create is designed to be safe, durable, and stylish, while also being eco-friendly and mindful of tomorrow's world.</p>
-                    <p className="mt-4 text-sm sm:text-base">What began as a vision to provide reliable food-grade packaging has today grown into a legacy of excellence, serving diverse industries with solutions that carry not just beverages, but also the values of care, innovation, and sustainability. At Worldstar, every sip matters and so does the planet.</p>
+                    <p className="mt-4 text-sm sm:text-base">KS Manufactory specialises in high-quality paper cups and buffet plates, blending innovation, sustainability, and trust in every product. We have earned the confidence of clients who value both quality and responsibility.</p>
+                    <p className="mt-4 text-sm sm:text-base">Our journey has always been guided by a simple belief that packaging is more than just a container. It is an extension of the product, the brand, and the experience. Every cup and plate we create is designed to be safe, durable, and stylish, while also being eco-friendly and mindful of tomorrow&apos;s world.</p>
+                    <p className="mt-4 text-sm sm:text-base">What began as a vision to provide reliable food-grade packaging has today grown into a legacy of excellence, serving diverse industries with solutions that carry not just beverages, but also the values of care, innovation, and sustainability. At KS Manufactory, every sip matters and so does the planet.</p>
                   </div>
                 </div>
               </section>
@@ -297,7 +297,7 @@ export default function Home() {
               <section id="section4" className="min-h-screen relative px-4 sm:px-0 hidden md:block">
                 <Image src="/assets/img-2.png" alt="img1" width={260} height={260} className="img1 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[120px] sm:w-[180px] lg:w-[260px] top-[5%] sm:top-[12%] left-[2%] sm:left-[3%] rotate-[15deg]" />
                 <Image src="/assets/img-3.png" alt="img2" width={470} height={470} className="img2 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[200px] sm:w-[300px] lg:max-w-[470px] top-[35%] sm:top-[22%] right-[2%] sm:right-[4%] rotate-[14deg]" style={{ height: 'auto' }} />
-                <Image src="/assets/img-4.png" alt="img3" width={340} height={340} className="img3 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[150px] sm:w-[220px] lg:w-[340px] left-[5%] sm:left-[10%] bottom-[5%] sm:bottom-[12%] -rotate-[12deg]" />
+                <Image src="/assets/plate.png" alt="img3" width={340} height={340} className="img3 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[150px] sm:w-[220px] lg:w-[340px] left-[5%] sm:left-[10%] bottom-[5%] sm:bottom-[12%] -rotate-[12deg]" style={{ height: 'auto' }} />
               </section>
 
               <section id="section5" className="text-center pt-8 sm:pt-16 lg:pt-[4vw] pb-16 sm:pb-24 lg:pb-[8vw] min-h-[94vh] px-4 sm:px-0">
@@ -309,7 +309,7 @@ export default function Home() {
                   </div>
                   {/* The Target Spot */}
                   <div ref={targetSpotRef} className="hidden lg:flex product flex-col items-center justify-end">
-                    <div className="name text-lg sm:text-xl font-medium text-center">Rippled Paper Cups</div>
+                    <div className="name text-lg sm:text-xl font-medium text-center">Buffet Plates</div>
                   </div>
                   <div className="product flex flex-col items-center justify-end sm:col-span-2 lg:col-span-1">
                     <Image src="/assets/img-1.png" alt="black" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" />
@@ -331,7 +331,7 @@ export default function Home() {
               Trusted by <span className="text-[#31473A]">Brands,</span><br />Served with Care
             </h2>
             <p className="mt-5 text-[#31473A]/80 max-w-md leading-relaxed">
-              From your favourite cafés to leading food chains, our eco-friendly cups and straws carry the mark of quality and reliability. Each brand you see here partners with us to ensure their beverages are served in style — sustainably, safely, and with a touch of innovation.
+              From local cafés to catering businesses and food service providers, our eco-friendly cups and plates carry the mark of quality and reliability. Each partner works with us to ensure their food and beverages are served in style — sustainably, safely, and with a touch of innovation.
             </p>
             <Link href="/about" className="mt-8 inline-flex items-center gap-2 bg-[#1E1E1E] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#31473A] transition-colors shadow-md">
               Explore Integration <span aria-hidden>›</span>
@@ -347,7 +347,7 @@ export default function Home() {
                   "/images/cl-1.png", "/images/cl-2.png", "/images/cl-3.png", "/images/cl-5.png"
                 ].map((src, i) => (
                   <div key={i} className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full" style={{ height: '80px' }}>
-                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain max-h-10 w-auto" />
+                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain" style={{ width: 'auto', maxHeight: '2.5rem' }} />
                   </div>
                 ))}
               </div>
@@ -361,7 +361,7 @@ export default function Home() {
                   "/images/cl-5.png", "/images/cl-3.png", "/images/cl-2.png", "/images/cl-1.png"
                 ].map((src, i) => (
                   <div key={i} className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full" style={{ height: '80px' }}>
-                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain max-h-10 w-auto" />
+                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain" style={{ width: 'auto', maxHeight: '2.5rem' }} />
                   </div>
                 ))}
               </div>
@@ -375,7 +375,7 @@ export default function Home() {
                   "/images/cl-3.png", "/images/cl-5.png", "/images/cl-1.png", "/images/cl-2.png"
                 ].map((src, i) => (
                   <div key={i} className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full" style={{ height: '80px' }}>
-                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain max-h-10 w-auto" />
+                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain" style={{ width: 'auto', maxHeight: '2.5rem' }} />
                   </div>
                 ))}
               </div>
@@ -390,7 +390,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-center text-[#31473A] mb-16 tracking-tight">
             Our Certifications
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             {/* Card 1: BRC */}
             <div className="bg-white rounded-3xl p-8 border border-white/20 shadow-xl flex flex-col items-center justify-between min-h-[520px] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
               <div className="w-full flex justify-center items-center h-20 mb-6 relative">
@@ -400,6 +400,7 @@ export default function Home() {
                   width={160}
                   height={64}
                   className="object-contain max-h-16"
+                  style={{ width: 'auto' }}
                 />
               </div>
               <div
@@ -408,7 +409,7 @@ export default function Home() {
               >
                 <Image
                   alt="BRC Certificate"
-                  src="/images/BRC.jpg"
+                  src="/assets/certificate-1.jpg"
                   fill
                   sizes="220px"
                   className="object-contain p-2 bg-white"
@@ -428,6 +429,7 @@ export default function Home() {
                   width={160}
                   height={64}
                   className="object-contain max-h-16"
+                  style={{ width: 'auto' }}
                 />
               </div>
               <div
@@ -436,7 +438,7 @@ export default function Home() {
               >
                 <Image
                   alt="FSSC Certificate"
-                  src="/images/fssc.jpg"
+                  src="/assets/certificate-1.jpg"
                   fill
                   sizes="220px"
                   className="object-contain p-2 bg-white"
@@ -456,6 +458,7 @@ export default function Home() {
                   width={160}
                   height={64}
                   className="object-contain max-h-16"
+                  style={{ width: 'auto' }}
                 />
               </div>
               <div
@@ -464,7 +467,7 @@ export default function Home() {
               >
                 <Image
                   alt="Sedex Certificate"
-                  src="/images/smet2-sEDXE.jpg"
+                  src="/assets/certificate-1.jpg"
                   fill
                   sizes="220px"
                   className="object-contain p-2 bg-white"
@@ -474,38 +477,9 @@ export default function Home() {
                 SEDEX
               </h3>
             </div>
-
-            {/* Card 4: ISO 22000:2005 */}
-            <div className="bg-white rounded-3xl p-8 border border-white/20 shadow-xl flex flex-col items-center justify-between min-h-[520px] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
-              <div className="w-full flex justify-center items-center h-20 mb-6 relative">
-                <Image
-                  alt="ISO Logo"
-                  src="/images/cl-5.png"
-                  width={160}
-                  height={64}
-                  className="object-contain max-h-16"
-                />
-              </div>
-              <div
-                className="relative rounded-xl overflow-hidden border border-gray-100 shadow-md"
-                style={{ width: '220px', height: '308px' }}
-              >
-                <Image
-                  alt="ISO Certificate"
-                  src="/images/ISO-22000-2005.jpg"
-                  fill
-                  sizes="220px"
-                  className="object-contain p-2 bg-white"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
-                ISO 22000:2005
-              </h3>
-            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-

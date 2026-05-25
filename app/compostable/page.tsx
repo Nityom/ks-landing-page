@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { Shield, Leaf, Recycle, Award, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Compostable Paper Cups | WorldStar Packaging Industry",
+  title: "Compostable Paper Cups | KS Manufactory",
   description:
-    "CPCB certified compostable paper cups — eco-friendly, food-safe, and sustainably produced by WorldStar Packaging Industry.",
+    "CPCB certified compostable paper cups — eco-friendly, food-safe, and sustainably produced by KS Manufactory.",
 };
 
 export default function CompostablePage() {
@@ -31,7 +31,7 @@ export default function CompostablePage() {
             </span>
           </div>
           <p className="leading-7">
-            At <strong>WorldStar Packaging Industry</strong>, we take pride in being leaders in sustainable and eco-friendly packaging solutions. Our <strong>CPCB Certified Compostable Paper Cups</strong> are thoughtfully designed to meet the highest environmental and safety standards, making them a responsible choice for businesses committed to sustainability.
+            At <strong>KS Manufactory</strong>, we take pride in being leaders in sustainable and eco-friendly packaging solutions. Our <strong>CPCB Certified Compostable Paper Cups</strong> are thoughtfully designed to meet the highest environmental and safety standards, making them a responsible choice for businesses committed to sustainability.
           </p>
           <p className="leading-7">
             Crafted from 100% biodegradable materials, these cups naturally break down after use, reducing waste and minimizing environmental impact. Perfect for cafes, restaurants, and events, they combine durability, functionality, and eco-conscious design, so you can serve your beverages confidently while contributing to a greener planet.
@@ -43,7 +43,7 @@ export default function CompostablePage() {
 
         <div className="flex justify-center">
           <Image
-            src="/images/comp-1.png"
+            src="/assets/img-4.png"
             alt="Pure Flavour Zero Plastic Cup"
             width={380}
             height={480}

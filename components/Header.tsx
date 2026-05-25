@@ -25,7 +25,7 @@ export default function Header() {
       }`}>
         <div className="flex-shrink-0 flex items-center">
           <Link href="/">
-            <Image src="/assets/logo.svg" alt="Logo" width={80} height={80} className="w-20 h-20" />
+            <Image src="/assets/logo.svg" alt="Logo" width={80} height={80} style={{ width: '5rem', height: 'auto' }} />
           </Link>
         </div>
         <nav className="hidden md:flex gap-10 mr-6 items-center">
@@ -60,7 +60,7 @@ export default function Header() {
         <div className="relative h-full flex flex-col">
           <div className="flex items-center justify-between p-6 border-b border-[#31473A]/10">
             <div className="flex items-center space-x-3">
-              <Image src="/assets/logo.svg" alt="Logo" width={48} height={48} className="w-12 h-12" />
+              <Image src="/assets/logo.svg" alt="Logo" width={48} height={48} style={{ width: '3rem', height: 'auto' }} />
               <span className="text-[#31473A] font-bold text-xl">Menu</span>
             </div>
             <button

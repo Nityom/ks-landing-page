@@ -96,11 +96,11 @@ export default function Home() {
       // On mobile: animate cup into the "Sip sustainably!" section, then fade out
       gsap.to(cupRef.current, {
         scrollTrigger: { trigger: "#section2", start: "top bottom", end: "center center", scrub: true },
-        y: "40vh", rotate: 75, ease: "power1.inOut", immediateRender: false
+        y: "28vh", rotate: 75, ease: "power1.inOut", immediateRender: false
       });
       gsap.to(cupRef.current, {
         scrollTrigger: { trigger: "#section2", start: "center center", end: "bottom bottom", scrub: true },
-        opacity: 0, y: "55vh", ease: "power1.inOut", immediateRender: false
+        opacity: 0, y: "42vh", ease: "power1.inOut", immediateRender: false
       });
     });
 
@@ -242,7 +242,7 @@ export default function Home() {
                 src="/assets/img-5.png"
                 alt=""
                 id="headphone"
-                className="absolute left-1/2 -translate-x-1/2 top-[10%] w-[60vw] sm:w-[50vw] lg:w-[40vw] max-w-[560px] z-10 drop-shadow-[8px_35px_6px_rgba(0,0,0,0.13)]"
+                className="absolute left-1/2 -translate-x-1/2 top-[2.2%] w-[60vw] sm:w-[50vw] lg:w-[40vw] max-w-[560px] z-10 drop-shadow-[8px_35px_6px_rgba(0,0,0,0.13)]"
                 style={{ willChange: 'transform' }}
               />
 

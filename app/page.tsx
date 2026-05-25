@@ -95,12 +95,12 @@ export default function Home() {
     mm.add("(max-width: 990px)", () => {
       // On mobile: animate cup into the "Sip sustainably!" section, then fade out
       gsap.to(cupRef.current, {
-        scrollTrigger: { trigger: "#section2", start: "top bottom", end: "center center", scrub: true },
-        y: "28vh", rotate: 75, ease: "power1.inOut", immediateRender: false
+        scrollTrigger: { trigger: "#section2", start: "top bottom", end: "top center", scrub: true },
+        y: "95vh", rotate: 75, ease: "power1.inOut", immediateRender: false
       });
       gsap.to(cupRef.current, {
-        scrollTrigger: { trigger: "#section2", start: "center center", end: "bottom bottom", scrub: true },
-        opacity: 0, y: "42vh", ease: "power1.inOut", immediateRender: false
+        scrollTrigger: { trigger: "#section2", start: "top center", end: "center center", scrub: true },
+        opacity: 0, y: "115vh", ease: "power1.inOut", immediateRender: false
       });
     });
 

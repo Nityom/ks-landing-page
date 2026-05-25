@@ -1,15 +1,28 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="w-full flex items-center justify-between border-b border-white/30 px-6 py-2 z-50 fixed bg-transparent">
+      <header className={`w-full flex items-center justify-between border-b px-6 py-2 z-50 fixed transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-[#E9EFE6]/95 backdrop-blur-md shadow-md border-b-[#31473A]/30 py-3' 
+          : 'bg-transparent border-b-[#31473A]/25 py-4'
+      }`}>
         <div className="flex-shrink-0 flex items-center">
           <Link href="/">
             <Image src="/assets/logo.svg" alt="Logo" width={80} height={80} className="w-20 h-20" />

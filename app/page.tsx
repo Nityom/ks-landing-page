@@ -95,8 +95,8 @@ export default function Home() {
     mm.add("(max-width: 990px)", () => {
       // On mobile: animate cup into the "Sip sustainably!" section
       gsap.to(cupRef.current, {
-        scrollTrigger: { trigger: "#section2", start: "top bottom", end: "center center", scrub: true },
-        y: "40vh", rotate: 75, ease: "power1.inOut", immediateRender: false
+        scrollTrigger: { trigger: "#section2", start: "top bottom", end: "top center", scrub: true },
+        y: "69vh", rotate: 75, ease: "power1.inOut", immediateRender: false
       });
     });
 
@@ -176,31 +176,43 @@ export default function Home() {
               <div style={{ backgroundColor: '#E9EFE6' }} className="absolute inset-0 z-0 transition-bg">
                 <div style={{ backgroundColor: '#E9EFE6', animation: 'circleRevealAnim 1s cubic-bezier(.66,.34,.29,1.2) forwards', clipPath: 'circle(0% at 63% 55%)', zIndex: 1 }} className="absolute inset-0"></div>
               </div>
-              <main className="min-h-[calc(100vh-64px)] md:h-[calc(100vh-64px)] flex md:flex-row flex-col-reverse w-full relative pt-16 pb-12 md:pb-0">
-                <section className="flex flex-col justify-center px-6 sm:px-8 py-8 md:py-0 w-full md:w-[48%] md:border-r border-[#31473A]/10 z-10 relative">
-                  <h1 key={`title-${activeCup}`} className="carousel-text-animate font-montserrat text-3xl sm:text-4xl md:text-[3.2vw] lg:text-[3vw] font-bold text-left text-[#31473A] mb-4">{currentCup.name}</h1>
-                  <p key={`desc-${activeCup}`} className="carousel-text-animate text-[#31473A] mb-8 text-sm sm:text-base max-w-[90%] md:max-w-none">
+              <main className="min-h-[calc(100vh-64px)] md:min-h-[115vh] md:h-[115vh] flex md:flex-row flex-col-reverse w-full relative pt-24 pb-12 md:pb-0">
+                <section className="flex flex-col justify-center px-6 sm:px-8 py-8 md:py-0 w-full md:w-[48%] md:border-r border-[#31473A]/30 z-10 relative">
+                  <h1 key={`title-${activeCup}`} className="carousel-text-animate font-montserrat text-3xl sm:text-5xl md:text-[3.5vw] lg:text-[3.2vw] font-bold text-left text-[#31473A] mb-6 leading-[1.1]">{currentCup.name}</h1>
+                  <p key={`desc-${activeCup}`} className="carousel-text-animate text-[#31473A] mb-10 text-sm sm:text-base md:text-lg max-w-[90%] md:max-w-[95%] opacity-90">
                     {currentCup.desc}
                   </p>
                   <Link href="/about">
-                    <button className="bg-[#1E1E1E] text-white px-8 py-2 rounded-full font-montserrat font-semibold w-fit hover:bg-[#31473A] transition-all shadow-md">know more</button>
+                    <button className="bg-[#1E1E1E] text-white px-10 py-3 rounded-full font-montserrat font-semibold w-fit hover:bg-[#31473A] transition-all shadow-md text-base md:text-lg">know more</button>
                   </Link>
                 </section>
-                <section className="w-full md:w-[52%] flex flex-row items-center relative overflow-x-visible z-10">
-                  <div className="flex flex-row items-center h-full w-full relative gap-10">
+                <section className="w-full md:w-[52%] md:h-full flex flex-col justify-between relative overflow-x-visible z-10 pb-6 md:pb-8">
+                  <div className="flex flex-row items-center flex-grow w-full relative gap-10">
                     <div className="flex flex-col items-center justify-center w-2/3 h-full relative">
-                      <Image key={`img1-${activeCup}`} src={currentCup.img} alt={currentCup.name} width={500} height={500} className="carousel-main-img-animate object-contain h-[55vh] mt-6" />
-                      <figcaption className="font-montserrat text-[#31473A] font-bold text-base text-center mt-3 hidden md:block">{currentCup.name}</figcaption>
+                      <Image key={`img1-${activeCup}`} src={currentCup.img} alt={currentCup.name} width={500} height={500} className="carousel-main-img-animate object-contain h-[55vh] md:h-[72vh] mt-6" />
                     </div>
                     <div className="w-1/3 h-full flex items-center justify-center relative overflow-visible">
-                      <Image key={`img2-${activeCup}`} src={nextCup.img} alt={nextCup.name} width={300} height={300} className="carousel-next-img-animate object-contain h-[41vh] opacity-80 translate-x-[-30%] scale-90" />
-                      <figcaption style={{ position: 'absolute', bottom: '30px', left: '50%', transform: 'translateX(-50%)' }} className="font-montserrat text-[#31473A] font-bold text-xs text-center mt-3 w-28 truncate">{nextCup.name}</figcaption>
+                      <Image key={`img2-${activeCup}`} src={nextCup.img} alt={nextCup.name} width={300} height={300} className="carousel-next-img-animate object-contain h-[41vh] md:h-[54vh] opacity-80 translate-x-[-30%] scale-90" />
                     </div>
-                    <div className="absolute left-0 top-0 h-full border-l border-[#31473A]/10 z-10"></div>
+                    <div className="absolute left-0 top-0 h-full border-l border-[#31473A]/30 z-10"></div>
                   </div>
-                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 z-20">
-                    <button onClick={handlePrevCup} aria-label="Previous Product" className="bg-[#31473A]/10 border border-[#31473A]/30 rounded-full w-10 h-10 flex items-center justify-center font-bold text-[#31473A] hover:bg-[#31473A]/20 transition-all shadow-sm">&lt;</button>
-                    <button onClick={handleNextCup} aria-label="Next Product" className="bg-[#31473A]/10 border border-[#31473A]/30 rounded-full w-10 h-10 flex items-center justify-center font-bold text-[#31473A] hover:bg-[#31473A]/20 transition-all shadow-sm">&gt;</button>
+                  <div className="w-full flex flex-col items-center gap-4 z-20 mt-4">
+                    <div className="w-full flex flex-row items-center relative gap-10">
+                      <div className="w-2/3 flex justify-center">
+                        <span className="font-montserrat text-[#31473A] font-bold text-base text-center hidden md:block whitespace-nowrap">
+                          {currentCup.name}
+                        </span>
+                      </div>
+                      <div className="w-1/3 flex justify-center">
+                        <span className="font-montserrat text-[#31473A] font-bold text-xs text-center w-28 truncate">
+                          {nextCup.name}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <button onClick={handlePrevCup} aria-label="Previous Product" className="bg-[#31473A]/10 border border-[#31473A]/30 rounded-full w-10 h-10 flex items-center justify-center font-bold text-[#31473A] hover:bg-[#31473A]/20 transition-all shadow-sm">&lt;</button>
+                      <button onClick={handleNextCup} aria-label="Next Product" className="bg-[#31473A]/10 border border-[#31473A]/30 rounded-full w-10 h-10 flex items-center justify-center font-bold text-[#31473A] hover:bg-[#31473A]/20 transition-all shadow-sm">&gt;</button>
+                    </div>
                   </div>
                 </section>
               </main>

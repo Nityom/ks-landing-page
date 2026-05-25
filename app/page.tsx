@@ -16,10 +16,11 @@ export default function Home() {
   const targetSpotRef = useRef<HTMLDivElement>(null);
 
   const heroCups = [
-    { img: "/images/c1.png", name: "GOURMET FRESH COFFEE", desc: "Great coffee deserves a great cup. Our paper cups, designed for Gourmet Fresh Coffee, bring together strength, sustainability, and style — the perfect blend for your perfect brew." },
-    { img: "/images/c2.png", name: "COFFE EAT", desc: "For those who appreciate both taste and aesthetics. Enhance your brand with a cup that feels just as good as the drink inside." },
-    { img: "/images/c4.png", name: "FRESHLY ROASTED", desc: "Preserve the rich aroma and heat of freshly roasted beans with our premium, insulated double-wall paper cups." },
-    { img: "/images/c5.png", name: "PREMIUM ROAST", desc: "An exclusive experience in every sip. Crafted for premium blends, offering the highest quality material and eco-friendly standards." }
+    { img: "/assets/img-1.png", name: "FRESH MIX JUICE", desc: "Vibrant, fruit-filled designs that bring your brand to life. Our paper cups are built for freshness — keeping every sip as lively as the design." },
+    { img: "/assets/img-2.png", name: "COCA-COLA", desc: "Iconic branding meets premium packaging. Crafted to hold your favourite beverages with precision, strength, and eye-catching style." },
+    { img: "/assets/img-3.png", name: "NEWCAFE", desc: "Bold and distinctive — our double-wall paper cups deliver superior insulation for hot beverages while showcasing your brand powerfully." },
+    { img: "/assets/img-4.png", name: "CREATIVE COFFEE CO.", desc: "Premium roasts deserve premium cups. Crafted with passion — our paper cups combine artisan aesthetics with eco-conscious materials." },
+    { img: "/assets/img-5.png", name: "HARVEST HARMONY", desc: "Farm-fresh flavour, beautifully packaged. Our cups for Harvest Harmony Organic Orchards reflect the purity and integrity behind every pour." }
   ];
 
   const [activeCup, setActiveCup] = useState(0);
@@ -88,6 +89,18 @@ export default function Home() {
       gsap.to(cupRef.current, {
         scrollTrigger: { trigger: "#section5", start: "center bottom", end: "bottom bottom", scrub: true },
         y: i ? "432vh" : "419vh", width: "300px", ease: "power1.inOut", immediateRender: false
+      });
+    });
+
+    mm.add("(max-width: 990px)", () => {
+      // On mobile: animate cup into the "Sip sustainably!" section, then fade out
+      gsap.to(cupRef.current, {
+        scrollTrigger: { trigger: "#section2", start: "top bottom", end: "center center", scrub: true },
+        y: "55vh", rotate: 75, ease: "power1.inOut", immediateRender: false
+      });
+      gsap.to(cupRef.current, {
+        scrollTrigger: { trigger: "#section2", start: "center center", end: "bottom bottom", scrub: true },
+        opacity: 0, y: "70vh", ease: "power1.inOut", immediateRender: false
       });
     });
 
@@ -203,12 +216,12 @@ export default function Home() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-8 text-left">Our Products</h2>
                 <div className="flex flex-wrap justify-around gap-6 md:gap-8">
                   {[
-                    { name: 'Single Wall Paper Cups', img: '/images/cup6.png', color: '#CBB89D' },
-                    { name: 'Double Wall Paper Cups', img: '/images/cup9.png', color: '#FFB6B9' },
-                    { name: 'Rippled Paper Cups', img: '/images/cup9.png', color: '#F9E79F' },
-                    { name: 'Paper Food Container', img: '/images/cup6.png', color: '#CBB89D' },
-                    { name: 'Paper Straws', img: '/images/cup9.png', color: '#D7BDE2' },
-                    { name: 'Lid for Paper Cups', img: '/images/cup6.png', color: '#CBB89D' },
+                    { name: 'Single Wall Paper Cups', img: '/assets/img-1.png', color: '#CBB89D' },
+                    { name: 'Double Wall Paper Cups', img: '/assets/img-3.png', color: '#FFB6B9' },
+                    { name: 'Rippled Paper Cups', img: '/assets/img-5.png', color: '#F9E79F' },
+                    { name: 'Paper Food Container', img: '/assets/img-2.png', color: '#CBB89D' },
+                    { name: 'Paper Straws', img: '/assets/img-4.png', color: '#D7BDE2' },
+                    { name: 'Lid for Paper Cups', img: '/assets/img-1.png', color: '#CBB89D' },
                   ].map((product, idx) => (
                     <div key={idx} className="flex flex-col items-center text-center max-w-[120px] mx-4">
                       <div className={`w-40 h-40 rounded-full flex items-center justify-center mb-3 cursor-pointer hover:scale-105 transition-transform duration-200 overflow-hidden`} style={{ backgroundColor: product.color }}>
@@ -226,7 +239,7 @@ export default function Home() {
               {/* The animated headphone cup */}
               <img
                 ref={cupRef}
-                src="/images/h-cup.png"
+                src="/assets/img-5.png"
                 alt=""
                 id="headphone"
                 className="absolute left-1/2 -translate-x-1/2 top-[2.2%] w-[60vw] sm:w-[50vw] lg:w-[40vw] max-w-[560px] z-10 drop-shadow-[8px_35px_6px_rgba(0,0,0,0.13)]"
@@ -264,7 +277,7 @@ export default function Home() {
               <section id="section3" className="min-h-screen pt-8 sm:pt-16 lg:pt-[4vw] pb-8 sm:pb-16 lg:pb-[4vw] px-4 sm:px-0">
                 <h2 className="heading font-montserrat font-bold text-center mb-8 sm:mb-12 lg:mb-[3vw] text-[clamp(2rem,8vw,13.5rem)] text-[#31473A] uppercase">About Us</h2>
                 <div className="content-wrapper flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-24 items-center">
-                  <Image src="/images/papercup-machine-4.jpg" alt="About Us" width={500} height={500} className="rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg w-full max-w-[500px] order-2 lg:order-1" />
+                  <Image src="/assets/plant-1.jpg" alt="About Us" width={500} height={500} className="rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg w-full max-w-[500px] order-2 lg:order-1" style={{ height: 'auto' }} />
                   <div className="content max-w-[500px] lg:ml-auto order-1 lg:order-2">
                     <p className="mt-4 text-sm sm:text-base">For over 27 years, WorldStar Packaging Industry has been shaping the way beverages are served with packaging that blends innovation, sustainability, and trust. From gourmet coffee brands to quick-service restaurants and leading airlines, we have earned the confidence of clients who value both quality and responsibility.</p>
                     <p className="mt-4 text-sm sm:text-base">Our journey has always been guided by a simple belief that packaging is more than just a container. It is an extension of the product, the brand, and the experience. Every cup and straw we create is designed to be safe, durable, and stylish, while also being eco-friendly and mindful of tomorrow's world.</p>
@@ -274,16 +287,16 @@ export default function Home() {
               </section>
 
               <section id="section4" className="min-h-screen relative px-4 sm:px-0 hidden md:block">
-                <Image src="/images/h1.png" alt="img1" width={260} height={260} className="img1 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[120px] sm:w-[180px] lg:w-[260px] top-[5%] sm:top-[12%] left-[2%] sm:left-[3%] rotate-[15deg]" />
-                <Image src="/images/h2.png" alt="img2" width={470} height={470} className="img2 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[200px] sm:w-[300px] lg:max-w-[470px] top-[35%] sm:top-[22%] right-[2%] sm:right-[4%] rotate-[14deg]" />
-                <Image src="/images/h3.png" alt="img3" width={340} height={340} className="img3 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[150px] sm:w-[220px] lg:w-[340px] left-[5%] sm:left-[10%] bottom-[5%] sm:bottom-[12%] -rotate-[12deg]" />
+                <Image src="/assets/img-2.png" alt="img1" width={260} height={260} className="img1 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[120px] sm:w-[180px] lg:w-[260px] top-[5%] sm:top-[12%] left-[2%] sm:left-[3%] rotate-[15deg]" />
+                <Image src="/assets/img-3.png" alt="img2" width={470} height={470} className="img2 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[200px] sm:w-[300px] lg:max-w-[470px] top-[35%] sm:top-[22%] right-[2%] sm:right-[4%] rotate-[14deg]" style={{ height: 'auto' }} />
+                <Image src="/assets/img-4.png" alt="img3" width={340} height={340} className="img3 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[150px] sm:w-[220px] lg:w-[340px] left-[5%] sm:left-[10%] bottom-[5%] sm:bottom-[12%] -rotate-[12deg]" />
               </section>
 
               <section id="section5" className="text-center pt-8 sm:pt-16 lg:pt-[4vw] pb-16 sm:pb-24 lg:pb-[8vw] min-h-[94vh] px-4 sm:px-0">
                 <h2 className="heading font-montserrat font-bold text-[clamp(2rem,6.5vw,6.5vw)] uppercase text-[#31473A] mb-6">Top Picks</h2>
                 <div className="product-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6 mt-8 sm:mt-18">
                   <div className="product flex flex-col items-center justify-end">
-                    <Image src="/images/cup9.png" alt="green" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" />
+                    <Image src="/assets/img-3.png" alt="green" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" style={{ height: 'auto' }} />
                     <div className="name text-lg sm:text-xl font-medium">Double Wall Paper Cups</div>
                   </div>
                   {/* The Target Spot */}
@@ -291,7 +304,7 @@ export default function Home() {
                     <div className="name text-lg sm:text-xl font-medium text-center">Rippled Paper Cups</div>
                   </div>
                   <div className="product flex flex-col items-center justify-end sm:col-span-2 lg:col-span-1">
-                    <Image src="/images/cup6.png" alt="black" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" />
+                    <Image src="/assets/img-1.png" alt="black" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" />
                     <div className="name text-lg sm:text-xl font-medium">Single Wall Paper Cups</div>
                   </div>
                 </div>
@@ -389,6 +402,7 @@ export default function Home() {
                   alt="BRC Certificate"
                   src="/images/BRC.jpg"
                   fill
+                  sizes="220px"
                   className="object-contain p-2 bg-white"
                 />
               </div>
@@ -416,6 +430,7 @@ export default function Home() {
                   alt="FSSC Certificate"
                   src="/images/fssc.jpg"
                   fill
+                  sizes="220px"
                   className="object-contain p-2 bg-white"
                 />
               </div>
@@ -443,6 +458,7 @@ export default function Home() {
                   alt="Sedex Certificate"
                   src="/images/smet2-sEDXE.jpg"
                   fill
+                  sizes="220px"
                   className="object-contain p-2 bg-white"
                 />
               </div>
@@ -470,6 +486,7 @@ export default function Home() {
                   alt="ISO Certificate"
                   src="/images/ISO-22000-2005.jpg"
                   fill
+                  sizes="220px"
                   className="object-contain p-2 bg-white"
                 />
               </div>

@@ -12,7 +12,7 @@ export default function Header() {
       <header className="w-full flex items-center justify-between border-b border-white/30 px-6 py-2 z-50 fixed bg-transparent">
         <div className="flex-shrink-0 flex items-center">
           <Link href="/">
-            <Image src="/images/logo3.png" alt="Logo" width={80} height={80} className="w-20 h-20" />
+            <Image src="/assets/logo.svg" alt="Logo" width={80} height={80} className="w-20 h-20" />
           </Link>
         </div>
         <nav className="hidden md:flex gap-10 mr-6 items-center">
@@ -47,7 +47,7 @@ export default function Header() {
         <div className="relative h-full flex flex-col">
           <div className="flex items-center justify-between p-6 border-b border-[#2F5D50]/50">
             <div className="flex items-center space-x-3">
-              <Image src="/images/logo3.png" alt="Logo" width={48} height={48} className="w-12 h-12" />
+              <Image src="/assets/logo.svg" alt="Logo" width={48} height={48} className="w-12 h-12" />
               <span className="text-[#31473A] font-bold text-xl">Menu</span>
             </div>
             <button

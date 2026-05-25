@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Column 1: Logo & Text */}
           <div>
             <div className="flex items-center gap-3">
-              <Image src="/images/logo3.png" className="max-w-32" alt="logo" width={128} height={128} priority />
+              <Image src="/assets/logo.svg" className="max-w-32" alt="logo" width={128} height={128} priority style={{ height: 'auto' }} />
             </div>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-200">
               For over 27 years, WorldStar Packaging Industry has been shaping the way beverages are served with packaging that blends innovation, sustainability, and trust.

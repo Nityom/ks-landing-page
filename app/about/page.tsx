@@ -234,6 +234,7 @@ export default function AboutPage() {
                 alt="Ripple Cups stacked"
                 src="/images/bg.jpg"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -252,6 +253,7 @@ export default function AboutPage() {
                 width={500}
                 height={600}
                 className="w-full object-cover"
+                style={{ height: 'auto' }}
                 priority
               />
             </div>

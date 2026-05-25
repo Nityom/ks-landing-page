@@ -96,11 +96,11 @@ export default function Home() {
       // On mobile: animate cup into the "Sip sustainably!" section, then fade out
       gsap.to(cupRef.current, {
         scrollTrigger: { trigger: "#section2", start: "top bottom", end: "center center", scrub: true },
-        y: "55vh", rotate: 75, ease: "power1.inOut", immediateRender: false
+        y: "40vh", rotate: 75, ease: "power1.inOut", immediateRender: false
       });
       gsap.to(cupRef.current, {
         scrollTrigger: { trigger: "#section2", start: "center center", end: "bottom bottom", scrub: true },
-        opacity: 0, y: "70vh", ease: "power1.inOut", immediateRender: false
+        opacity: 0, y: "55vh", ease: "power1.inOut", immediateRender: false
       });
     });
 
@@ -180,10 +180,10 @@ export default function Home() {
               <div style={{ backgroundColor: '#E9EFE6' }} className="absolute inset-0 z-0 transition-bg">
                 <div style={{ backgroundColor: '#E9EFE6', animation: 'circleRevealAnim 1s cubic-bezier(.66,.34,.29,1.2) forwards', clipPath: 'circle(0% at 63% 55%)', zIndex: 1 }} className="absolute inset-0"></div>
               </div>
-              <main className="h-[calc(100vh-64px)] flex md:flex-row flex-col-reverse w-full relative pt-16">
-                <section className="flex flex-col justify-center pl-[5vw] pr-[2vw] w-full md:w-[48%] border-r border-[#31473A]/10 z-10 relative">
-                  <h1 key={`title-${activeCup}`} className="carousel-text-animate font-montserrat text-[3vw] leading-[1.1] text-[#31473A] mb-4">{currentCup.name}</h1>
-                  <p key={`desc-${activeCup}`} className="carousel-text-animate text-[#31473A] mb-8 max-w-[90%]">
+              <main className="min-h-[calc(100vh-64px)] md:h-[calc(100vh-64px)] flex md:flex-row flex-col-reverse w-full relative pt-16 pb-12 md:pb-0">
+                <section className="flex flex-col justify-center px-6 sm:px-8 py-8 md:py-0 w-full md:w-[48%] md:border-r border-[#31473A]/10 z-10 relative">
+                  <h1 key={`title-${activeCup}`} className="carousel-text-animate font-montserrat text-3xl sm:text-4xl md:text-[3.2vw] lg:text-[3vw] font-bold text-left text-[#31473A] mb-4">{currentCup.name}</h1>
+                  <p key={`desc-${activeCup}`} className="carousel-text-animate text-[#31473A] mb-8 text-sm sm:text-base max-w-[90%] md:max-w-none">
                     {currentCup.desc}
                   </p>
                   <Link href="/about">
@@ -194,7 +194,7 @@ export default function Home() {
                   <div className="flex flex-row items-center h-full w-full relative gap-10">
                     <div className="flex flex-col items-center justify-center w-2/3 h-full relative">
                       <Image key={`img1-${activeCup}`} src={currentCup.img} alt={currentCup.name} width={500} height={500} className="carousel-main-img-animate object-contain h-[55vh] mt-6" />
-                      <figcaption className="font-montserrat text-[#31473A] font-bold text-base text-center mt-3">{currentCup.name}</figcaption>
+                      <figcaption className="font-montserrat text-[#31473A] font-bold text-base text-center mt-3 hidden md:block">{currentCup.name}</figcaption>
                     </div>
                     <div className="w-1/3 h-full flex items-center justify-center relative overflow-visible">
                       <Image key={`img2-${activeCup}`} src={nextCup.img} alt={nextCup.name} width={300} height={300} className="carousel-next-img-animate object-contain h-[41vh] opacity-80 translate-x-[-30%] scale-90" />
@@ -242,7 +242,7 @@ export default function Home() {
                 src="/assets/img-5.png"
                 alt=""
                 id="headphone"
-                className="absolute left-1/2 -translate-x-1/2 top-[2.2%] w-[60vw] sm:w-[50vw] lg:w-[40vw] max-w-[560px] z-10 drop-shadow-[8px_35px_6px_rgba(0,0,0,0.13)]"
+                className="absolute left-1/2 -translate-x-1/2 top-[10%] w-[60vw] sm:w-[50vw] lg:w-[40vw] max-w-[560px] z-10 drop-shadow-[8px_35px_6px_rgba(0,0,0,0.13)]"
                 style={{ willChange: 'transform' }}
               />
 

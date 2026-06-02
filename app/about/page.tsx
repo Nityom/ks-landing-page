@@ -83,11 +83,11 @@ export default function AboutPage() {
               <div className="w-full flex justify-center items-center h-20 mb-6 relative">
                 <Image
                   alt="BRC Logo"
-                  src="/images/cl-1.png"
+              src="/assets/indiamart-logo.png"
                   width={160}
                   height={64}
                   className="object-contain"
-                  style={{ width: 'auto', maxHeight: '4rem' }}
+                  style={{ width: 'auto', height: 'auto', maxHeight: '4rem' }}
                 />
               </div>
               <div
@@ -102,9 +102,7 @@ export default function AboutPage() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
-                BRC
-              </h3>
+          
             </div>
 
             {/* Card 2: FSSC 22000 */}
@@ -112,11 +110,11 @@ export default function AboutPage() {
               <div className="w-full flex justify-center items-center h-20 mb-6 relative">
                 <Image
                   alt="FSSC Logo"
-                  src="/images/cl-2.png"
+                  src="/assets/indiamart-logo.png"
                   width={160}
                   height={64}
                   className="object-contain"
-                  style={{ width: 'auto', maxHeight: '4rem' }}
+                  style={{ width: 'auto', height: 'auto', maxHeight: '4rem' }}
                 />
               </div>
               <div
@@ -131,9 +129,7 @@ export default function AboutPage() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
-                FSSC 22000
-              </h3>
+             
             </div>
 
             {/* Card 3: SEDEX */}
@@ -141,11 +137,11 @@ export default function AboutPage() {
               <div className="w-full flex justify-center items-center h-20 mb-6 relative">
                 <Image
                   alt="Sedex Logo"
-                  src="/images/cl-3.png"
+                  src="/assets/indiamart-logo.png"
                   width={160}
                   height={64}
                   className="object-contain"
-                  style={{ width: 'auto', maxHeight: '4rem' }}
+                  style={{ width: 'auto', height: 'auto', maxHeight: '4rem' }}
                 />
               </div>
               <div
@@ -160,9 +156,7 @@ export default function AboutPage() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
-                SEDEX
-              </h3>
+            
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
@@ -7,6 +7,18 @@ import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    if (isDropdownOpen) document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isDropdownOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +42,43 @@ export default function Header() {
         </div>
         <nav className="hidden md:flex gap-10 mr-6 items-center">
           <Link className="text-black hover:text-gray-600 transition-colors" href="/about">About</Link>
-          <div className="relative">
-            <button className="flex items-center gap-1 text-black hover:text-gray-600 transition-colors">
+          <div
+            className="relative"
+            ref={dropdownRef}
+          >
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="flex items-center gap-1 text-black hover:text-gray-600 transition-colors">
               Our Products
-              <ChevronDown className="w-4 h-4 transition-transform" />
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
+            {isDropdownOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-[#31473A]/10 overflow-hidden z-50">
+                <Link
+                  href="/products/cups"
+                  onClick={() => setIsDropdownOpen(false)}
+                  className="flex items-center gap-3 px-5 py-4 hover:bg-[#E9EFE6] transition-colors"
+                >
+                  <Image src="/assets/img-1.png" alt="Paper Cups" width={36} height={36} className="w-9 h-auto object-contain flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-[#31473A] text-sm">Paper Cups</div>
+                    <div className="text-xs text-[#31473A]/50">Single, Double Wall &amp; Ripple</div>
+                  </div>
+                </Link>
+                <div className="h-px bg-[#31473A]/10 mx-5" />
+                <Link
+                  href="/products/plates"
+                  onClick={() => setIsDropdownOpen(false)}
+                  className="flex items-center gap-3 px-5 py-4 hover:bg-[#E9EFE6] transition-colors"
+                >
+                  <Image src="/assets/plate.png" alt="Buffet Plates" width={36} height={36} className="w-9 h-auto object-contain flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-[#31473A] text-sm">Buffet Plates</div>
+                    <div className="text-xs text-[#31473A]/50">Premium food-safe serving</div>
+                  </div>
+                </Link>
+              </div>
+            )}
           </div>
           <Link className="text-black hover:text-gray-600 transition-colors" href="/compostable">Compostable Paper Cups</Link>
           <Link className="text-black hover:text-gray-600 transition-colors" href="/contact">Contact</Link>
@@ -76,21 +120,24 @@ export default function Header() {
               <Link onClick={() => setIsMenuOpen(false)} href="/about" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#31473A]/10 hover:text-[#31473A]/80 transition-all duration-300 transform hover:translate-x-2">About</Link>
               <div className="bg-[#31473A]/5 rounded-lg overflow-hidden">
                 <div className="text-[#31473A] text-lg font-medium py-4 px-4 border-b border-[#31473A]/10">Our Products</div>
-                <div className="px-4">
-                  <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#31473A]/80 transition-colors">
-                    Beverage Serving <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
-                  </button>
-                </div>
-                <div className="px-4 border-t border-[#31473A]/10">
-                  <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#31473A]/80 transition-colors">
-                    Food Serving <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
-                  </button>
-                </div>
-                <div className="px-4 border-t border-[#31473A]/10">
-                  <button className="flex items-center justify-between w-full text-left text-[#31473A] font-medium py-3 hover:text-[#31473A]/80 transition-colors">
-                    Serving Add-on <ChevronRight className="w-[18px] h-[18px] transition-transform duration-300" />
-                  </button>
-                </div>
+                <Link
+                  onClick={() => setIsMenuOpen(false)}
+                  href="/products/cups"
+                  className="flex items-center gap-3 px-4 py-3 hover:bg-[#31473A]/10 transition-all duration-200"
+                >
+                  <Image src="/assets/img-1.png" alt="Paper Cups" width={32} height={32} className="w-8 h-auto object-contain flex-shrink-0" />
+                  <span className="text-[#31473A] font-medium flex-1">Paper Cups</span>
+                  <ChevronRight className="w-4 h-4 text-[#31473A]/40" />
+                </Link>
+                <Link
+                  onClick={() => setIsMenuOpen(false)}
+                  href="/products/plates"
+                  className="flex items-center gap-3 px-4 py-3 border-t border-[#31473A]/10 hover:bg-[#31473A]/10 transition-all duration-200"
+                >
+                  <Image src="/assets/plate.png" alt="Buffet Plates" width={32} height={32} className="w-8 h-auto object-contain flex-shrink-0" />
+                  <span className="text-[#31473A] font-medium flex-1">Buffet Plates</span>
+                  <ChevronRight className="w-4 h-4 text-[#31473A]/40" />
+                </Link>
               </div>
               <Link onClick={() => setIsMenuOpen(false)} href="/compostable" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#31473A]/10 hover:text-[#31473A]/80 transition-all duration-300 transform hover:translate-x-2">Compostable Paper Cups</Link>
               <Link onClick={() => setIsMenuOpen(false)} href="/contact" className="block text-[#31473A] text-lg font-medium py-4 px-4 rounded-lg hover:bg-[#31473A]/10 hover:text-[#31473A]/80 transition-all duration-300 transform hover:translate-x-2">Contact</Link>

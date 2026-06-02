@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Column 1: Logo & Text */}
           <div>
             <div className="flex items-center gap-3">
-              <Image src="/assets/logo.svg" alt="KS Manufactory logo" width={128} height={128} priority style={{ maxWidth: '8rem', height: 'auto' }} />
+              <Image src="/assets/logo.svg" alt="KS Manufactory logo" width={128} height={128} priority style={{ width: '8rem', height: 'auto' }} />
             </div>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-200">
               KS Manufactory specialises in high-quality paper cups and buffet plates, combining innovation, sustainability, and trust in every product we make.

@@ -295,16 +295,16 @@ export default function Home() {
               </section>
 
               <section id="section4" className="min-h-screen relative px-4 sm:px-0 hidden md:block">
-                <Image src="/assets/img-2.png" alt="img1" width={260} height={260} className="img1 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[120px] sm:w-[180px] lg:w-[260px] top-[5%] sm:top-[12%] left-[2%] sm:left-[3%] rotate-[15deg]" />
-                <Image src="/assets/img-3.png" alt="img2" width={470} height={470} className="img2 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[200px] sm:w-[300px] lg:max-w-[470px] top-[35%] sm:top-[22%] right-[2%] sm:right-[4%] rotate-[14deg]" style={{ height: 'auto' }} />
-                <Image src="/assets/plate.png" alt="img3" width={340} height={340} className="img3 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[150px] sm:w-[220px] lg:w-[340px] left-[5%] sm:left-[10%] bottom-[5%] sm:bottom-[12%] -rotate-[12deg]" style={{ height: 'auto' }} />
+                <Image src="/assets/img-2.png" alt="img1" width={260} height={260} loading="eager" className="img1 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[120px] sm:w-[180px] lg:w-[260px] top-[5%] sm:top-[12%] left-[2%] sm:left-[3%] rotate-[15deg] h-auto" />
+                <Image src="/assets/img-3.png" alt="img2" width={470} height={470} className="img2 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[200px] sm:w-[300px] lg:max-w-[470px] top-[35%] sm:top-[22%] right-[2%] sm:right-[4%] rotate-[14deg] h-auto" />
+                <Image src="/assets/plate.png" alt="img3" width={340} height={340} className="img3 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[150px] sm:w-[220px] lg:w-[340px] left-[5%] sm:left-[10%] bottom-[5%] sm:bottom-[12%] -rotate-[12deg] h-auto" />
               </section>
 
               <section id="section5" className="text-center pt-8 sm:pt-16 lg:pt-[4vw] pb-16 sm:pb-24 lg:pb-[8vw] min-h-[94vh] px-4 sm:px-0">
                 <h2 className="heading font-montserrat font-bold text-[clamp(2rem,6.5vw,6.5vw)] uppercase text-[#31473A] mb-6">Top Picks</h2>
                 <div className="product-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6 mt-8 sm:mt-18">
                   <div className="product flex flex-col items-center justify-end">
-                    <Image src="/assets/img-3.png" alt="green" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" style={{ height: 'auto' }} />
+                    <Image src="/assets/img-3.png" alt="green" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)] h-auto" />
                     <div className="name text-lg sm:text-xl font-medium">Double Wall Paper Cups</div>
                   </div>
                   {/* The Target Spot */}
@@ -323,66 +323,95 @@ export default function Home() {
       </div>
 
       {/* ── Trusted by Brands ── */}
-      <section className="w-full bg-[#E9EFE6] px-6 py-20">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
-          {/* Left text */}
-          <div className="lg:w-2/5 flex-shrink-0">
-            <h2 className="font-montserrat font-bold text-4xl md:text-5xl leading-tight text-[#31473A]">
-              Trusted by <span className="text-[#31473A]">Brands,</span><br />Served with Care
-            </h2>
-            <p className="mt-5 text-[#31473A]/80 max-w-md leading-relaxed">
-              From local cafés to catering businesses and food service providers, our eco-friendly cups and plates carry the mark of quality and reliability. Each partner works with us to ensure their food and beverages are served in style — sustainably, safely, and with a touch of innovation.
-            </p>
-            <Link href="/about" className="mt-8 inline-flex items-center gap-2 bg-[#1E1E1E] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#31473A] transition-colors shadow-md">
-              Explore Integration <span aria-hidden>›</span>
-            </Link>
-          </div>
-          {/* Right scrolling columns of brand logos */}
-          <div className="lg:w-3/5 grid grid-cols-3 gap-4 h-[380px] overflow-hidden">
-            {/* Column 1: Scrolls Up */}
-            <div className="marquee-column-container">
-              <div className="flex flex-col gap-4 marquee-up-wrapper">
-                {[
-                  "/images/cl-1.png", "/images/cl-2.png", "/images/cl-3.png", "/images/cl-5.png",
-                  "/images/cl-1.png", "/images/cl-2.png", "/images/cl-3.png", "/images/cl-5.png"
-                ].map((src, i) => (
-                  <div key={i} className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full" style={{ height: '80px' }}>
-                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain" style={{ width: 'auto', maxHeight: '2.5rem' }} />
-                  </div>
-                ))}
-              </div>
-            </div>
+    <section className="w-full bg-[#E9EFE6] px-6 py-20">
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center justify-center">
+    {/* Left text */}
+    <div className="lg:w-2/5 flex-shrink-0">
+      <h2 className="font-montserrat font-bold text-4xl md:text-5xl leading-tight text-[#31473A]">
+        Trusted by <span className="text-[#31473A]">Brands,</span><br />Served with Care
+      </h2>
+      <p className="mt-5 text-[#31473A]/80 max-w-md leading-relaxed">
+        From local cafés to catering businesses and food service providers, our eco-friendly cups and plates carry the mark of quality and reliability. Each partner works with us to ensure their food and beverages are served in style — sustainably, safely, and with a touch of innovation.
+      </p>
+      <Link
+        href="/about"
+        className="mt-8 inline-flex items-center gap-2 bg-[#1E1E1E] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#31473A] transition-colors shadow-md"
+      >
+        Explore Integration <span aria-hidden>›</span>
+      </Link>
+    </div>
 
-            {/* Column 2: Scrolls Down */}
-            <div className="marquee-column-container">
-              <div className="flex flex-col gap-4 marquee-down-wrapper">
-                {[
-                  "/images/cl-5.png", "/images/cl-3.png", "/images/cl-2.png", "/images/cl-1.png",
-                  "/images/cl-5.png", "/images/cl-3.png", "/images/cl-2.png", "/images/cl-1.png"
-                ].map((src, i) => (
-                  <div key={i} className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full" style={{ height: '80px' }}>
-                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain" style={{ width: 'auto', maxHeight: '2.5rem' }} />
-                  </div>
-                ))}
-              </div>
+    {/* Right scrolling columns of brand logos */}
+    <div className="lg:w-3/5 grid grid-cols-3 gap-4 h-[380px] overflow-hidden">
+      
+      {/* Column 1: Scrolls Up */}
+      <div className="marquee-column-container">
+        <div className="flex flex-col gap-4 marquee-up-wrapper">
+          {Array(8).fill("/assets/indiamart-logo.png").map((src, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full"
+              style={{ height: "80px" }}
+            >
+              <Image
+                src={src}
+                alt="Brand logo"
+                width={120}
+                height={60}
+                className="object-contain"
+                style={{ width: "auto", height: "auto", maxHeight: "2.5rem" }}
+              />
             </div>
-
-            {/* Column 3: Scrolls Up */}
-            <div className="marquee-column-container">
-              <div className="flex flex-col gap-4 marquee-up-wrapper">
-                {[
-                  "/images/cl-3.png", "/images/cl-5.png", "/images/cl-1.png", "/images/cl-2.png",
-                  "/images/cl-3.png", "/images/cl-5.png", "/images/cl-1.png", "/images/cl-2.png"
-                ].map((src, i) => (
-                  <div key={i} className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full" style={{ height: '80px' }}>
-                    <Image src={src} alt="Brand logo" width={120} height={60} className="object-contain" style={{ width: 'auto', maxHeight: '2.5rem' }} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      {/* Column 2: Scrolls Down */}
+      <div className="marquee-column-container">
+        <div className="flex flex-col gap-4 marquee-down-wrapper">
+          {Array(8).fill("/assets/indiamart-logo.png").map((src, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full"
+              style={{ height: "80px" }}
+            >
+              <Image
+                src={src}
+                alt="Brand logo"
+                width={120}
+                height={60}
+                className="object-contain"
+                style={{ width: "auto", height: "auto", maxHeight: "2.5rem" }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Column 3: Scrolls Up */}
+      <div className="marquee-column-container">
+        <div className="flex flex-col gap-4 marquee-up-wrapper">
+          {Array(8).fill("/assets/indiamart-logo.png").map((src, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl flex items-center justify-center p-4 shadow-sm hover:shadow-md transition-shadow aspect-video w-full"
+              style={{ height: "80px" }}
+            >
+              <Image
+                src={src}
+                alt="Brand logo"
+                width={120}
+                height={60}
+                className="object-contain"
+                style={{ width: "auto", height: "auto", maxHeight: "2.5rem" }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Certifications Section */}
       <section className="py-20 bg-[#E9EFE6]">
@@ -392,15 +421,15 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             {/* Card 1: BRC */}
-            <div className="bg-white rounded-3xl p-8 border border-white/20 shadow-xl flex flex-col items-center justify-between min-h-[520px] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
+  <div className="bg-white rounded-3xl p-8 border border-white/20 shadow-xl flex flex-col items-center justify-between min-h-[520px] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
               <div className="w-full flex justify-center items-center h-20 mb-6 relative">
                 <Image
                   alt="BRC Logo"
-                  src="/images/cl-1.png"
+                  src="/assets/indiamart-logo.png"
                   width={160}
                   height={64}
                   className="object-contain max-h-16"
-                  style={{ width: 'auto' }}
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </div>
               <div
@@ -415,9 +444,7 @@ export default function Home() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
-                BRC
-              </h3>
+             
             </div>
 
             {/* Card 2: FSSC 22000 */}
@@ -425,11 +452,11 @@ export default function Home() {
               <div className="w-full flex justify-center items-center h-20 mb-6 relative">
                 <Image
                   alt="FSSC Logo"
-                  src="/images/cl-2.png"
+                 src="/assets/indiamart-logo.png"
                   width={160}
                   height={64}
                   className="object-contain max-h-16"
-                  style={{ width: 'auto' }}
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </div>
               <div
@@ -444,9 +471,7 @@ export default function Home() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
-                FSSC 22000
-              </h3>
+              
             </div>
 
             {/* Card 3: SEDEX */}
@@ -454,11 +479,11 @@ export default function Home() {
               <div className="w-full flex justify-center items-center h-20 mb-6 relative">
                 <Image
                   alt="Sedex Logo"
-                  src="/images/cl-3.png"
+                src="/assets/indiamart-logo.png"
                   width={160}
                   height={64}
                   className="object-contain max-h-16"
-                  style={{ width: 'auto' }}
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </div>
               <div
@@ -473,9 +498,7 @@ export default function Home() {
                   className="object-contain p-2 bg-white"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-6 text-[#31473A] tracking-wide">
-                SEDEX
-              </h3>
+             
             </div>
           </div>
         </div>

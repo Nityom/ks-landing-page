@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "KS Manufactory",
   description: "KS Manufactory specialises in high-quality paper cups and buffet plates, combining innovation, sustainability, and trust.",
+  icons: {
+    icon: "/assets/logo.svg",
+  },
 };
 
 export default function RootLayout({

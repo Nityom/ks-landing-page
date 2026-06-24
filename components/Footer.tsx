@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Column 1: Logo & Text */}
           <div>
             <div className="flex items-center gap-3">
-              <Image src="/assets/logo.svg" alt="KS Manufactory logo" width={128} height={128} priority style={{ width: '8rem', height: 'auto' }} />
+              <Image src="/assets/logo.svg" alt="KS Manufactory logo" width={128} height={128} priority className="w-32" style={{ height: 'auto' }} />
             </div>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-200">
               KS Manufactory specialises in high-quality paper cups and buffet plates, combining innovation, sustainability, and trust in every product we make.
@@ -79,12 +79,12 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 text-white flex-shrink-0" />
                 <span className="flex-1 text-sm leading-relaxed">
-                  KS Manufactory, Muzaffarpur, Bihar
+                  Chata chok, B.R.Ambedkar Bihar University, Muzaffarpur, Bihar 842001
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-5 w-5 text-white flex-shrink-0" />
-                <span className="flex-1 text-sm select-all font-medium">+91 77963 08778</span>
+                <span className="flex-1 text-sm select-all font-medium">+91 99176 06732 (Call & WhatsApp)</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-5 w-5 text-white flex-shrink-0" />

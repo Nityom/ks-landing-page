@@ -5,7 +5,7 @@ import { Shield, Package, Star } from "lucide-react";
 export const metadata: Metadata = {
   title: "Buffet Plates | KS Manufactory",
   description:
-    "Heavy-duty food-safe buffet plates manufactured by KS Manufactory, Muzaffarpur, Bihar.",
+    "Heavy-duty food-safe buffet plates manufactured by KS Manufactory, Chata chok, B.R.Ambedkar Bihar University, Muzaffarpur, Bihar 842001.",
 };
 
 export default function BuffetPlatesPage() {

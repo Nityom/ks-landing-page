@@ -295,16 +295,16 @@ export default function Home() {
               </section>
 
               <section id="section4" className="min-h-screen relative px-4 sm:px-0 hidden md:block">
-                <Image src="/assets/img-2.png" alt="img1" width={260} height={260} loading="eager" className="img1 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[120px] sm:w-[180px] lg:w-[260px] top-[5%] sm:top-[12%] left-[2%] sm:left-[3%] rotate-[15deg] h-auto" />
-                <Image src="/assets/img-3.png" alt="img2" width={470} height={470} className="img2 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[200px] sm:w-[300px] lg:max-w-[470px] top-[35%] sm:top-[22%] right-[2%] sm:right-[4%] rotate-[14deg] h-auto" />
-                <Image src="/assets/plate.png" alt="img3" width={340} height={340} className="img3 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[150px] sm:w-[220px] lg:w-[340px] left-[5%] sm:left-[10%] bottom-[5%] sm:bottom-[12%] -rotate-[12deg] h-auto" />
+                <Image src="/assets/img-2.png" alt="img1" width={260} height={260} loading="eager" className="img1 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[120px] sm:w-[180px] lg:w-[260px] top-[5%] sm:top-[12%] left-[2%] sm:left-[3%] rotate-[15deg] h-auto" style={{ width: 'auto', height: 'auto' }} />
+                <Image src="/assets/img-3.png" alt="img2" width={470} height={470} className="img2 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[200px] sm:w-[300px] lg:max-w-[470px] top-[35%] sm:top-[22%] right-[2%] sm:right-[4%] rotate-[14deg] h-auto" style={{ width: 'auto', height: 'auto' }} />
+                <Image src="/assets/plate.png" alt="img3" width={340} height={340} className="img3 rounded-[10px] border-4 sm:border-[10px] border-white shadow-lg absolute w-[150px] sm:w-[220px] lg:w-[340px] left-[5%] sm:left-[10%] bottom-[5%] sm:bottom-[12%] -rotate-[12deg] h-auto" style={{ width: 'auto', height: 'auto' }} />
               </section>
 
               <section id="section5" className="text-center pt-8 sm:pt-16 lg:pt-[4vw] pb-16 sm:pb-24 lg:pb-[8vw] min-h-[94vh] px-4 sm:px-0">
                 <h2 className="heading font-montserrat font-bold text-[clamp(2rem,6.5vw,6.5vw)] uppercase text-[#31473A] mb-6">Top Picks</h2>
                 <div className="product-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6 mt-8 sm:mt-18">
                   <div className="product flex flex-col items-center justify-end">
-                    <Image src="/assets/img-3.png" alt="green" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)] h-auto" />
+                    <Image src="/assets/img-3.png" alt="green" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)] h-auto" style={{ width: 'auto', height: 'auto' }} />
                     <div className="name text-lg sm:text-xl font-medium">Double Wall Paper Cups</div>
                   </div>
                   {/* The Target Spot */}
@@ -312,7 +312,7 @@ export default function Home() {
                     <div className="name text-lg sm:text-xl font-medium text-center">Buffet Plates</div>
                   </div>
                   <div className="product flex flex-col items-center justify-end sm:col-span-2 lg:col-span-1">
-                    <Image src="/assets/img-1.png" alt="black" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" />
+                    <Image src="/assets/img-1.png" alt="black" width={300} height={300} className="w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[300px] mb-4 sm:mb-6 drop-shadow-[6px_15px_5px_rgba(0,0,0,0.09)]" style={{ width: 'auto', height: 'auto' }} />
                     <div className="name text-lg sm:text-xl font-medium">Single Wall Paper Cups</div>
                   </div>
                 </div>

@@ -37,7 +37,7 @@ export default function Header() {
       }`}>
         <div className="flex-shrink-0 flex items-center">
           <Link href="/">
-            <Image src="/assets/logo.svg" alt="Logo" width={80} height={80} style={{ width: '5rem', height: 'auto' }} />
+            <Image src="/assets/logo.svg" alt="Logo" width={80} height={80} className="w-20" style={{ height: 'auto' }} />
           </Link>
         </div>
         <nav className="hidden md:flex gap-10 mr-6 items-center">
@@ -59,7 +59,7 @@ export default function Header() {
                   onClick={() => setIsDropdownOpen(false)}
                   className="flex items-center gap-3 px-5 py-4 hover:bg-[#E9EFE6] transition-colors"
                 >
-                  <Image src="/assets/img-1.png" alt="Paper Cups" width={36} height={36} className="w-9 h-auto object-contain flex-shrink-0" />
+                  <Image src="/assets/img-1.png" alt="Paper Cups" width={36} height={36} className="w-9 h-auto object-contain flex-shrink-0" style={{ width: 'auto', height: 'auto' }} />
                   <div>
                     <div className="font-semibold text-[#31473A] text-sm">Paper Cups</div>
                     <div className="text-xs text-[#31473A]/50">Single, Double Wall &amp; Ripple</div>
@@ -71,7 +71,7 @@ export default function Header() {
                   onClick={() => setIsDropdownOpen(false)}
                   className="flex items-center gap-3 px-5 py-4 hover:bg-[#E9EFE6] transition-colors"
                 >
-                  <Image src="/assets/plate.png" alt="Buffet Plates" width={36} height={36} className="w-9 h-auto object-contain flex-shrink-0" />
+                  <Image src="/assets/plate.png" alt="Buffet Plates" width={36} height={36} className="w-9 h-auto object-contain flex-shrink-0" style={{ width: 'auto', height: 'auto' }} />
                   <div>
                     <div className="font-semibold text-[#31473A] text-sm">Buffet Plates</div>
                     <div className="text-xs text-[#31473A]/50">Premium food-safe serving</div>
@@ -104,7 +104,7 @@ export default function Header() {
         <div className="relative h-full flex flex-col">
           <div className="flex items-center justify-between p-6 border-b border-[#31473A]/10">
             <div className="flex items-center space-x-3">
-              <Image src="/assets/logo.svg" alt="Logo" width={48} height={48} style={{ width: '3rem', height: 'auto' }} />
+              <Image src="/assets/logo.svg" alt="Logo" width={48} height={48} className="w-12" style={{ height: 'auto' }} />
               <span className="text-[#31473A] font-bold text-xl">Menu</span>
             </div>
             <button
@@ -125,7 +125,7 @@ export default function Header() {
                   href="/products/cups"
                   className="flex items-center gap-3 px-4 py-3 hover:bg-[#31473A]/10 transition-all duration-200"
                 >
-                  <Image src="/assets/img-1.png" alt="Paper Cups" width={32} height={32} className="w-8 h-auto object-contain flex-shrink-0" />
+                  <Image src="/assets/img-1.png" alt="Paper Cups" width={32} height={32} className="w-8 h-auto object-contain flex-shrink-0" style={{ width: 'auto', height: 'auto' }} />
                   <span className="text-[#31473A] font-medium flex-1">Paper Cups</span>
                   <ChevronRight className="w-4 h-4 text-[#31473A]/40" />
                 </Link>
@@ -134,7 +134,7 @@ export default function Header() {
                   href="/products/plates"
                   className="flex items-center gap-3 px-4 py-3 border-t border-[#31473A]/10 hover:bg-[#31473A]/10 transition-all duration-200"
                 >
-                  <Image src="/assets/plate.png" alt="Buffet Plates" width={32} height={32} className="w-8 h-auto object-contain flex-shrink-0" />
+                  <Image src="/assets/plate.png" alt="Buffet Plates" width={32} height={32} className="w-8 h-auto object-contain flex-shrink-0" style={{ width: 'auto', height: 'auto' }} />
                   <span className="text-[#31473A] font-medium flex-1">Buffet Plates</span>
                   <ChevronRight className="w-4 h-4 text-[#31473A]/40" />
                 </Link>

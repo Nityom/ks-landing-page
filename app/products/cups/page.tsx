@@ -5,7 +5,7 @@ import { Droplets, Package, Star } from "lucide-react";
 export const metadata: Metadata = {
   title: "Paper Cups | KS Manufactory",
   description:
-    "Premium single wall, double wall, and ripple paper cups manufactured by KS Manufactory, Muzaffarpur, Bihar.",
+    "Premium single wall, double wall, and ripple paper cups manufactured by KS Manufactory, Chata chok, B.R.Ambedkar Bihar University, Muzaffarpur, Bihar 842001.",
 };
 
 const cupProducts = [
@@ -17,13 +17,13 @@ const cupProducts = [
   },
   {
     name: "Double Wall Paper Cups",
-    img: "/assets/img-2.png",
+    img: "/assets/img-51.png",
     desc: "Insulated double-layer wall keeps hot beverages warm and protects hands from heat — no sleeve needed.",
     tag: "Best for Hot",
   },
   {
     name: "Ripple Wall Paper Cups",
-    img: "/assets/img-3.png",
+    img: "/assets/img-4.png",
     desc: "Triple-layer ripple texture provides superior insulation and an elegant grip without a sleeve.",
     tag: "Premium",
   },
@@ -73,7 +73,7 @@ export default function PaperCupsPage() {
         </div>
         <div className="flex justify-center">
           <Image
-            src="/assets/img-2.png"
+            src="/assets/img-5.png"
             alt="Double Wall Paper Cup"
             width={380}
             height={480}

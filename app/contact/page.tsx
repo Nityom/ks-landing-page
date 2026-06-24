@@ -182,9 +182,9 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-semibold text-[#31473A]">Phone Number</p>
+                    <p className="text-sm font-semibold text-[#31473A]">Phone & WhatsApp</p>
                     <p className="text-sm text-[#31473A] mt-1 font-medium select-all">
-                      +91 7796308778
+                      +91 99176 06732
                     </p>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export default function ContactPage() {
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-semibold text-[#31473A]">Email Address</p>
                     <p className="text-sm text-[#31473A] mt-1 font-medium break-all [overflow-wrap:anywhere] select-all" title="ksmanufactory@gmail.com">
-                      ksmanufactory@gmail.com.com
+                      ksmanufactory@gmail.com
                     </p>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function ContactPage() {
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-semibold text-[#31473A]">Our Office</p>
                   <p className="text-sm text-[#31473A] mt-1 leading-relaxed font-medium">
-                    KS Manufactory, Muzaffarpur, Bihar
+                    Chata chok, B.R.Ambedkar Bihar University, Muzaffarpur, Bihar 842001
                   </p>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function ContactPage() {
               {/* Map Embed */}
               <div className="mt-8 overflow-hidden rounded-2xl border border-[#2F5D50] h-[360px] shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3493.866680019917!2d77.12625837550966!3d28.872583275534417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDUyJzIxLjMiTiA3N8KwMDcnNDMuOCJF!5e0!3m2!1sen!2sin!4v1756450103796!5m2!1sen!2sin"
+                  src="https://maps.google.com/maps?q=26.1162828,85.3774008&z=17&output=embed"
                   className="h-full w-full border-0"
                   style={{ border: 0 }}
                   loading="lazy"

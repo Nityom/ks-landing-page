@@ -55,7 +55,8 @@ export default function BuffetPlatesPage() {
             alt="Buffet Plate"
             width={380}
             height={380}
-            className="w-full max-w-[320px] md:max-w-[380px] object-contain drop-shadow-xl h-auto"
+            className="w-full h-auto max-w-[320px] md:max-w-[380px] object-contain drop-shadow-xl"
+            style={{ width: '100%', height: 'auto' }}
             priority
           />
         </div>
@@ -114,6 +115,32 @@ export default function BuffetPlatesPage() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Plates Gallery */}
+      <div className="max-w-6xl mx-auto px-6 mb-20">
+        <h3 className="text-3xl font-light text-center mb-10 text-[#31473A] uppercase tracking-wide">
+          Our Collection
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            { src: "/assets/plate.png", alt: "Standard Buffet Plate" },
+            { src: "/assets/plate-2.png", alt: "Premium Buffet Plate 1" },
+            { src: "/assets/plate-3.png", alt: "Premium Buffet Plate 2" },
+            { src: "/assets/plate-4.png", alt: "Premium Buffet Plate 3" },
+          ].map((img, idx) => (
+            <div key={idx} className="bg-white rounded-2xl p-4 shadow-sm border border-[#E9EFE6] flex items-center justify-center hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={200}
+                height={200}
+                className="w-full h-auto object-contain"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </div>
+          ))}
         </div>
       </div>
 

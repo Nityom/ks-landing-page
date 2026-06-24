@@ -189,10 +189,10 @@ export default function Home() {
                 <section className="w-full md:w-[52%] md:h-full flex flex-col justify-between relative overflow-x-visible z-10 pb-6 md:pb-8">
                   <div className="flex flex-row items-center flex-grow w-full relative gap-10">
                     <div className="flex flex-col items-center justify-center w-2/3 h-full relative">
-                      <Image key={`img1-${activeCup}`} src={currentCup.img} alt={currentCup.name} width={500} height={500} loading="eager" className="carousel-main-img-animate object-contain h-[55vh] md:h-[72vh] mt-6" style={{ width: 'auto' }} />
+                      <Image key={`img1-${activeCup}`} src={currentCup.img} alt={currentCup.name} width={500} height={500} loading="eager" className="carousel-main-img-animate object-contain h-[55vh] md:h-[72vh] mt-6" style={{ width: 'auto', height: 'auto' }} />
                     </div>
                     <div className="w-1/3 h-full flex items-center justify-center relative overflow-visible">
-                      <Image key={`img2-${activeCup}`} src={nextCup.img} alt={nextCup.name} width={300} height={300} className="carousel-next-img-animate object-contain h-[41vh] md:h-[54vh] opacity-80 translate-x-[-30%] scale-90" style={{ width: 'auto' }} />
+                      <Image key={`img2-${activeCup}`} src={nextCup.img} alt={nextCup.name} width={300} height={300} className="carousel-next-img-animate object-contain h-[41vh] md:h-[54vh] opacity-80 translate-x-[-30%] scale-90" style={{ width: 'auto', height: 'auto' }} />
                     </div>
                     <div className="absolute left-0 top-0 h-full border-l border-[#31473A]/30 z-10"></div>
                   </div>
@@ -233,7 +233,7 @@ export default function Home() {
                   ].map((product, idx) => (
                     <div key={idx} className="flex flex-col items-center text-center max-w-[120px] mx-4">
                       <div className={`w-40 h-40 rounded-full flex items-center justify-center mb-3 cursor-pointer hover:scale-105 transition-transform duration-200 overflow-hidden`} style={{ backgroundColor: product.color }}>
-                        <Image alt={product.name} src={product.img} width={120} height={120} className="object-contain" />
+                        <Image alt={product.name} src={product.img} width={120} height={120} className="w-auto h-auto object-contain" style={{ width: 'auto', height: 'auto' }} />
                       </div>
                       <p className="text-sm font-medium text-gray-800 leading-tight">{product.name}</p>
                     </div>

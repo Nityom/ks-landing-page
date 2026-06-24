@@ -225,8 +225,8 @@ export default function AboutPage() {
                 src="/assets/img-3.png"
                 width={500}
                 height={600}
-                className="w-full object-contain"
-                style={{ height: 'auto' }}
+                className="w-full h-auto object-contain"
+                style={{ width: '100%', height: 'auto' }}
                 priority
               />
             </div>
@@ -249,8 +249,8 @@ export default function AboutPage() {
                       src={thumb.src}
                       width={180}
                       height={180}
-                      className="w-full object-contain"
-                      style={{ height: 'auto' }}
+                      className="w-full h-auto object-contain"
+                      style={{ width: '100%', height: 'auto' }}
                     />
                   </div>
                 ))}
